@@ -1,73 +1,135 @@
-// ========== FAQ ACCORDION ==========
 document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
 
+    // ========== FAQ ACCORDION ==========
+    const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-
         question.addEventListener('click', () => {
-            // Close other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+            faqItems.forEach(other => {
+                if (other !== item) other.classList.remove('active');
             });
-
-            // Toggle current item
             item.classList.toggle('active');
         });
     });
 
-    // ========== SMOOTH SCROLL FOR CTA BUTTONS ==========
+    // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            }
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     });
 
-    // ========== SCROLL ANIMATIONS ==========
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // ========== CARD STAGGER ANIMATIONS ==========
+    const cardSelectors = '.transform-card, .who-card, .testimonial-card';
+    document.querySelectorAll(cardSelectors).forEach(el => {
+        el.classList.add('anim-card');
+        const siblings = [...el.parentElement.children].filter(c => c.classList.contains('anim-card'));
+        el.style.transitionDelay = `${siblings.indexOf(el) * 0.12}s`;
+    });
 
-    const observer = new IntersectionObserver((entries) => {
+    // Curriculum list stagger
+    document.querySelectorAll('.curriculum-list li').forEach((el, i) => {
+        el.classList.add('anim-card');
+        el.style.transitionDelay = `${i * 0.08}s`;
+    });
+
+    const cardObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                entry.target.classList.add('visible');
+                cardObs.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observe all sections for animation
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('animate-section');
-        observer.observe(section);
+    document.querySelectorAll('.anim-card').forEach(el => cardObs.observe(el));
+
+    // ========== ELEMENT SCROLL ANIMATIONS ==========
+    const elObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                elObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.price-box, .guarantee-box, .trust-stats, .vm-outer').forEach(el => {
+        el.classList.add('anim-el');
+        elObs.observe(el);
     });
 
-    // Add animation styles dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .animate-section.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hero.animate-section {
-            opacity: 1;
-            transform: none;
-        }
-    `;
-    document.head.appendChild(style);
+    // ========== H2 UNDERLINE ANIMATION ==========
+    const h2Obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('h2-animated');
+                h2Obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('h2').forEach(el => h2Obs.observe(el));
+
+    // ========== COUNTER ANIMATION ==========
+    const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const original = el.textContent;
+                const num = parseInt(original.replace(/\D/g, ''));
+                const suffix = original.replace(/\d/g, '');
+                let current = 0;
+                const increment = num / 60;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= num) {
+                        el.textContent = original;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current) + suffix;
+                    }
+                }, 25);
+                counterObs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat span').forEach(el => counterObs.observe(el));
+
+    // ========== VIDEO MARQUEE MODAL ==========
+    const modal      = document.getElementById('videoModal');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalName  = document.getElementById('modalName');
+    const modalClose = document.getElementById('modalClose');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+
+    function openModal(videoId, name, loc) {
+        modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+        modalName.textContent = `${name} — ${loc}, Tamil Nadu`;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        modalIframe.src = '';
+        document.body.style.overflow = '';
+    }
+
+    // Click on any marquee card (original + duplicate)
+    document.querySelectorAll('.vm-card').forEach(card => {
+        card.addEventListener('click', () => {
+            openModal(card.dataset.video, card.dataset.name, card.dataset.loc);
+        });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
+
 });
