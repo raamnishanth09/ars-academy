@@ -169,6 +169,57 @@
             line-height: 1.6;
         }
 
+        /* ===== COMMUNITY SECTION ===== */
+        .ty-community {
+            background: var(--off-white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .community-cards {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .community-btn {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 32px;
+            border-radius: var(--radius);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 230px;
+            justify-content: center;
+        }
+        .community-btn:hover {
+            transform: translateY(-5px);
+        }
+        .community-btn.whatsapp {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+        }
+        .community-btn.whatsapp:hover {
+            box-shadow: 0 14px 40px rgba(37,211,102,0.5);
+        }
+        .community-btn.telegram {
+            background: #229ED9;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(34,158,217,0.35);
+        }
+        .community-btn.telegram:hover {
+            box-shadow: 0 14px 40px rgba(34,158,217,0.5);
+        }
+        .community-btn .btn-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
         /* ===== FOUNDER QUOTE ===== */
         .ty-quote {
             background: linear-gradient(135deg, var(--deep-blue), #2a3a9e);
@@ -314,8 +365,8 @@
                 <div class="ty-step anim-up">
                     <div class="step-num">2</div>
                     <div class="step-content">
-                        <h3>💬 WhatsApp Group Join</h3>
-                        <p>Student community-ல join ஆங்க — doubts, updates, support எல்லாம் கிடைக்கும். Link email-ல இருக்கும்.</p>
+                        <h3>💬 Community Join பண்ணுங்க</h3>
+                        <p>WhatsApp & Telegram-ல join ஆங்க — doubts, updates, live support எல்லாம் கிடைக்கும். கீழே links இருக்கு!</p>
                     </div>
                 </div>
                 <div class="ty-step anim-up">
@@ -325,6 +376,28 @@
                         <p>Day 1 lesson ready-ஆ இருக்கு. உங்கள் own pace-ல, comfortable-ஆ learn பண்ணுங்க!</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY LINKS -->
+    <section class="ty-community">
+        <div class="container">
+            <h2>🤝 Community-ல <span class="highlight">Join ஆங்க!</span></h2>
+            <p style="color:var(--text-muted);margin-bottom:36px;">Fellow students, live Q&A, exclusive updates — எல்லாம் ஒரே place-ல கிடைக்கும்.</p>
+            <div class="community-cards">
+                <a href="https://chat.whatsapp.com/FKXMmkjESTS1YNupsaaqEi"
+                   target="_blank" rel="noopener"
+                   class="community-btn whatsapp anim-up">
+                    <span class="btn-icon">💬</span>
+                    <span>WhatsApp Community</span>
+                </a>
+                <a href="https://t.me/+00eSq25xDPJlMGY9"
+                   target="_blank" rel="noopener"
+                   class="community-btn telegram anim-up">
+                    <span class="btn-icon">✈️</span>
+                    <span>Telegram Channel</span>
+                </a>
             </div>
         </div>
     </section>
