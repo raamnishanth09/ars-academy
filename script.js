@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.price-box, .guarantee-box, .trust-stats, .vm-outer').forEach(el => {
+    document.querySelectorAll('.price-box, .guarantee-box, .trust-stats, .video-grid').forEach(el => {
         el.classList.add('anim-el');
         elObs.observe(el);
     });
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
     }
 
-    // Click on any marquee card (original + duplicate)
+    // Click on any video card to open modal
     document.querySelectorAll('.vm-card').forEach(card => {
         card.addEventListener('click', () => {
             openModal(card.dataset.video, card.dataset.name, card.dataset.loc);
