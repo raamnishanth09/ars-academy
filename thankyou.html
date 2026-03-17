@@ -4,463 +4,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>நன்றி! You're Enrolled — ARS Academy</title>
-    <meta name="description" content="Welcome to ARS Academy's Astro Numerology Essential Course. Your enrollment is confirmed!">
+    <title>Welcome to ARS Academy! 🎉</title>
+    <meta name="description" content="வாழ்த்துக்கள்! You've enrolled in ARS Academy's Astro Numerology Essential Course.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* ===== THANK YOU PAGE STYLES ===== */
+        /* ===== CONFETTI ===== */
+        .confetti-wrap {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
+            top: -20px;
+            width: 10px; height: 10px;
+            border-radius: 2px;
+            opacity: 0;
+            animation: confettiFall 4s ease-in forwards;
+        }
+        @keyframes confettiFall {
+            0%   { opacity: 1; transform: translateY(0) rotate(0deg); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
+        }
 
-        /* Hero */
-        .ty-hero {
-            background: linear-gradient(135deg, var(--deep-blue) 0%, #0d1757 60%, #1a237e 100%);
-            color: var(--white);
+        /* ===== HEADER ===== */
+        .ty-header {
+            background: var(--deep-blue);
+            padding: 16px 0;
             text-align: center;
-            padding: 80px 20px 100px;
+        }
+        .ty-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+        .ty-logo .logo-icon { font-size: 1.8rem; }
+
+        /* ===== HERO ===== */
+        .ty-hero {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #2a3a9e 100%);
+            padding: 70px 20px 100px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        .ty-hero::before {
+        .ty-hero::after {
             content: '';
             position: absolute;
-            top: -60%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
-            pointer-events: none;
+            bottom: -2px; left: 0; right: 0;
+            height: 60px;
+            background: var(--off-white);
+            clip-path: ellipse(55% 100% at 50% 100%);
         }
-
-        .ty-hero-wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .ty-hero-wave svg {
-            display: block;
-            width: 100%;
-        }
-
-        /* Checkmark */
-        .ty-check-wrap {
-            margin-bottom: 28px;
-        }
-
-        .ty-check {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            border-radius: 50%;
-            font-size: 2.8rem;
-            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
-            animation: checkPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-                       checkGlow 2.5s 0.6s ease-in-out infinite;
-            opacity: 0;
-        }
-
-        @keyframes checkPop {
-            0%   { opacity: 0; transform: scale(0.3) rotate(-20deg); }
-            70%  { opacity: 1; transform: scale(1.15) rotate(5deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        @keyframes checkGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
-            50%       { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); }
-        }
-
-        /* Hero text */
-        .ty-hero h1 {
-            font-size: clamp(1.6rem, 4vw, 2.6rem);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 12px;
-            animation: fadeUp 0.7s 0.4s ease both;
-        }
-
-        .ty-hero h1 .highlight {
-            color: var(--gold);
-        }
-
-        .ty-course-tag {
+        .ty-badge {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.18);
-            border: 1.5px solid rgba(212, 175, 55, 0.4);
-            color: var(--gold-light);
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--text-dark);
+            font-weight: 700;
             font-size: 1rem;
-            font-weight: 600;
-            padding: 8px 22px;
+            padding: 8px 24px;
             border-radius: 50px;
-            margin-bottom: 18px;
-            animation: fadeUp 0.7s 0.55s ease both;
+            margin-bottom: 24px;
+            animation: badgePop 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
         }
-
-        .ty-trust {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-top: 10px;
-            animation: fadeUp 0.7s 0.7s ease both;
+        @keyframes badgePop {
+            from { opacity: 0; transform: scale(0.5); }
+            to   { opacity: 1; transform: scale(1); }
         }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
+        .ty-hero h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: slideUp 0.7s 0.2s ease both;
+        }
+        .ty-hero p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideUp 0.7s 0.35s ease both;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== NEXT STEPS ===== */
-        .ty-steps {
+        /* ===== VIDEO SECTION ===== */
+        .ty-video-section {
             background: var(--off-white);
             padding: 70px 20px;
             text-align: center;
         }
-
-        .ty-steps h2 {
-            color: var(--deep-blue);
-            margin-bottom: 10px;
-        }
-
-        .ty-steps .section-subtitle {
+        .ty-video-section h2 { margin-bottom: 12px; }
+        .ty-video-section > .container > p {
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 36px;
             font-size: 1rem;
         }
+        .ty-video-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            animation: slideUp 0.8s 0.2s ease both;
+        }
 
-        .steps-grid {
+        /* ===== WHAT'S NEXT ===== */
+        .ty-next {
+            background: var(--white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .ty-steps {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
             max-width: 900px;
             margin: 0 auto;
         }
-
-        @media (min-width: 768px) {
-            .steps-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .step-card {
-            background: var(--white);
+        .ty-step {
+            background: var(--off-white);
+            border: 1px solid var(--gold-light);
             border-radius: var(--radius);
-            padding: 36px 28px;
-            box-shadow: var(--shadow);
-            position: relative;
+            padding: 32px 24px;
+            text-align: left;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--gold);
         }
-
-        .step-card:hover {
+        .ty-step:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-gold);
         }
-
-        .step-number {
+        .step-num {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            min-width: 48px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
             color: var(--text-dark);
-            border-radius: 50%;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 800;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 18px;
-            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 4px 14px rgba(212,175,55,0.4);
         }
-
-        .step-icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .step-card h3 {
+        .step-content h3 {
+            font-size: 1.05rem;
             color: var(--deep-blue);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-
-        .step-card p {
+        .step-content p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 0.92rem;
             line-height: 1.6;
         }
 
-        /* ===== WHAT YOU UNLOCKED ===== */
-        .ty-unlocked {
-            background: var(--white);
+        /* ===== FOUNDER QUOTE ===== */
+        .ty-quote {
+            background: linear-gradient(135deg, var(--deep-blue), #2a3a9e);
             padding: 70px 20px;
             text-align: center;
         }
-
-        .ty-unlocked h2 {
-            color: var(--deep-blue);
-            margin-bottom: 10px;
-        }
-
-        .ty-unlocked .section-subtitle {
-            color: var(--text-muted);
-            margin-bottom: 50px;
-        }
-
-        .unlocked-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 800px;
+        .quote-card {
+            max-width: 720px;
             margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .unlocked-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .unlocked-card {
-            background: linear-gradient(145deg, #fff9ec, var(--white));
-            border: 2px solid var(--gold-light);
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(212,175,55,0.35);
             border-radius: var(--radius);
-            padding: 28px 18px;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 40px 36px;
         }
-
-        .unlocked-card:hover {
-            border-color: var(--gold);
-            box-shadow: var(--shadow-gold);
-            transform: translateY(-5px);
-        }
-
-        .unlocked-icon {
-            font-size: 2.2rem;
-            display: block;
+        .quote-mark {
+            font-size: 4rem;
+            color: var(--gold);
+            line-height: 1;
             margin-bottom: 12px;
         }
-
-        .unlocked-card h4 {
-            color: var(--deep-blue);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .unlocked-card p {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.5;
-        }
-
-        /* ===== SHARE SECTION ===== */
-        .ty-share {
-            background: linear-gradient(135deg, var(--deep-blue), #0d1757);
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .ty-share h2 {
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .ty-share .section-subtitle {
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 36px;
-        }
-
-        .share-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1.5px solid rgba(212, 175, 55, 0.3);
-            border-radius: var(--radius);
-            padding: 40px 32px;
-        }
-
-        .share-message {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 28px;
-            font-style: italic;
-        }
-
-        .share-message strong {
-            color: var(--gold);
-        }
-
-        .wa-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
+        .quote-card blockquote {
             color: var(--white);
-            font-size: 1.05rem;
-            font-weight: 700;
-            padding: 16px 36px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 20px;
         }
-
-        .wa-btn:hover {
-            background: #20bd5a;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
-        }
-
-        .wa-btn svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* ===== BACK LINK ===== */
-        .ty-back {
-            text-align: center;
-            padding: 30px 20px 10px;
-            background: var(--off-white);
-        }
-
-        .ty-back a {
-            color: var(--deep-blue);
-            font-size: 0.9rem;
-            text-decoration: underline;
-            opacity: 0.6;
-            transition: opacity 0.2s;
-        }
-
-        .ty-back a:hover {
-            opacity: 1;
-        }
-
-        /* Section label */
-        .section-label {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold-dark);
-            margin-bottom: 12px;
-        }
-
-        .ty-share .section-label {
+        .quote-author {
             color: var(--gold);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ===== TRUST STATS ===== */
+        .ty-trust {
+            background: var(--gold-light);
+            padding: 50px 20px;
+        }
+        .ty-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .ty-stat { text-align: center; }
+        .stat-num {
+            display: block;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 800;
+            color: var(--deep-blue);
+            line-height: 1;
+        }
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* ===== FOOTER ===== */
+        .ty-footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+        .ty-footer p + p { margin-top: 6px; }
+        .ty-footer .highlight { color: var(--gold); }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .anim-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .anim-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO: ENROLLMENT CONFIRMED -->
+    <!-- CONFETTI -->
+    <div class="confetti-wrap" id="confettiWrap"></div>
+
+    <!-- HEADER -->
+    <header class="ty-header">
+        <div class="ty-logo">
+            <span class="logo-icon">⭐</span>
+            <span>ARS <span class="highlight">Academy</span></span>
+        </div>
+    </header>
+
+    <!-- HERO -->
     <section class="ty-hero">
         <div class="container">
-            <div class="ty-check-wrap">
-                <div class="ty-check">✓</div>
-            </div>
-
-            <span class="ty-course-tag">✨ Enrollment Confirmed</span>
-            <h1>நன்றி! You're <span class="highlight">Officially Enrolled!</span> 🎉</h1>
-            <p class="ty-trust">⭐ 4500+ Students | A.S. Rakuraj | 24+ Years Experience | Tamil Nadu</p>
-        </div>
-        <div class="ty-hero-wave">
-            <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fafafa"/>
-            </svg>
+            <div class="ty-badge">🎉 Enrollment Confirmed!</div>
+            <h1>வாழ்த்துக்கள்! <span class="highlight">Welcome</span> to ARS Academy</h1>
+            <p>நீங்க ஒரு important decision எடுத்தீங்க — உங்கள் Astro Numerology journey இப்போ starts ஆகுது!</p>
         </div>
     </section>
 
-    <!-- NEXT STEPS -->
-    <section class="ty-steps">
+    <!-- WELCOME VIDEO -->
+    <section class="ty-video-section">
         <div class="container">
-            <span class="section-label">🗺 உங்கள் அடுத்த படி</span>
-            <h2>இனி என்ன செய்ய வேண்டும்?<br><span style="font-size:0.75em; color:var(--deep-blue-light);">What To Do Next</span></h2>
-            <p class="section-subtitle">3 simple steps — course access உடனே கிடைக்கும்</p>
-
-            <div class="steps-grid">
-                <div class="step-card anim-card">
-                    <div class="step-number">1</div>
-                    <span class="step-icon">📧</span>
-                    <h3>Email Check பண்ணுங்க</h3>
-                    <p>உங்கள் registered email-ல course access link அனுப்பி இருக்கோம். Spam folder-யும் check பண்ணுங்க.</p>
-                </div>
-                <div class="step-card anim-card">
-                    <div class="step-number">2</div>
-                    <span class="step-icon">💬</span>
-                    <h3>WhatsApp Group Join ஆகுங்க</h3>
-                    <p>Students community-ல join ஆகுங்க — live Q&A, tips, மற்றும் direct mentor support கிடைக்கும்.</p>
-                </div>
-                <div class="step-card anim-card">
-                    <div class="step-number">3</div>
-                    <span class="step-icon">▶️</span>
-                    <h3>Learning Start பண்ணுங்க</h3>
-                    <p>First module ready-ஆ இருக்கு. உங்கள் pace-ல, உங்கள் time-ல படிக்கலாம். Begin your journey today!</p>
-                </div>
+            <h2>🎬 Founder's <span class="highlight">Welcome Message</span></h2>
+            <p>A.S. Rakuraj sir உங்களுக்கு personally ஒரு special message சொல்றாங்க — கட்டாயம் பாருங்க!</p>
+            <div class="ty-video-wrap">
+                <a href="https://www.youtube.com/watch?v=NSNblmeW8OY" target="_blank" rel="noopener"
+                    class="video-thumb-link" aria-label="Watch Founder Welcome Message on YouTube">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/NSNblmeW8OY/maxresdefault.jpg"
+                            alt="Welcome Message from A.S. Rakuraj - ARS Academy"
+                            class="video-thumb-img"
+                            onerror="this.src='https://img.youtube.com/vi/NSNblmeW8OY/hqdefault.jpg'">
+                        <div class="video-play-overlay">
+                            <div class="play-circle">&#9654;</div>
+                            <span class="watch-label">Watch on YouTube</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- WHAT YOU UNLOCKED -->
-    <section class="ty-unlocked">
+    <!-- WHAT'S NEXT -->
+    <section class="ty-next">
         <div class="container">
-            <span class="section-label">🎁 உங்களுக்கு கிடைத்தது</span>
-            <h2>நீங்க Unlock பண்ணது என்னன்னா...<br><span style="font-size:0.75em; color:var(--deep-blue-light);">What You Just Unlocked</span></h2>
-            <p class="section-subtitle">Astro Numerology Essential Course-ல இவ்வளவு value!</p>
-
-            <div class="unlocked-grid">
-                <div class="unlocked-card anim-card">
-                    <span class="unlocked-icon">🎬</span>
-                    <h4>1 Month Video Course</h4>
-                    <p>Full HD videos, lifetime access, rewatch எத்தனை தடவையும்</p>
+            <h2>📋 இனி என்ன <span class="highlight">Next Steps?</span></h2>
+            <div class="ty-steps">
+                <div class="ty-step anim-up">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>📧 Email Check பண்ணுங்க</h3>
+                        <p>Course access details உங்கள் registered email-ல வந்திருக்கும். Inbox மட்டுமில்ல Spam-ஐயும் check பண்ணுங்க!</p>
+                    </div>
                 </div>
-                <div class="unlocked-card anim-card">
-                    <span class="unlocked-icon">🗣️</span>
-                    <h4>Tamil + Thanglish</h4>
-                    <p>Crisp-ஆ தமிழில் explain பண்றோம் — எல்லாரும் புரிஞ்சுக்கலாம்</p>
+                <div class="ty-step anim-up">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>💬 WhatsApp Group Join</h3>
+                        <p>Student community-ல join ஆங்க — doubts, updates, support எல்லாம் கிடைக்கும். Link email-ல இருக்கும்.</p>
+                    </div>
                 </div>
-                <div class="unlocked-card anim-card">
-                    <span class="unlocked-icon">🏅</span>
-                    <h4>Course Certificate</h4>
-                    <p>Completion certificate — உங்கள் achievement-க்கு official proof</p>
-                </div>
-                <div class="unlocked-card anim-card">
-                    <span class="unlocked-icon">🧑‍🏫</span>
-                    <h4>Mentor Access</h4>
-                    <p>A.S. Rakuraj sir கிட்ட direct — 24+ years experience guidance</p>
+                <div class="ty-step anim-up">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>🚀 Learning Start பண்ணுங்க</h3>
+                        <p>Day 1 lesson ready-ஆ இருக்கு. உங்கள் own pace-ல, comfortable-ஆ learn பண்ணுங்க!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BACK LINK -->
-    <div class="ty-back">
-        <a href="index.html">← Back to ARS Academy Home</a>
-    </div>
+    <!-- FOUNDER QUOTE -->
+    <section class="ty-quote">
+        <div class="container">
+            <div class="quote-card anim-up">
+                <div class="quote-mark">"</div>
+                <blockquote>
+                    Numerology ஒரு science — உங்கள் பெயரில், பிறந்த தேதியில் உங்கள் future இருக்கு.
+                    அதை கத்துக்கணும்னு நீங்க decide பண்ணதே ஒரு big step.
+                    இந்த course உங்கள் life-ஐ மாத்தும் — நான் guarantee பண்றேன்.
+                </blockquote>
+                <div class="quote-author">— A.S. Rakuraj, Founder | ARS Academy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STATS -->
+    <section class="ty-trust">
+        <div class="container">
+            <div class="ty-stats">
+                <div class="ty-stat anim-up">
+                    <span class="stat-num">4500+</span>
+                    <span class="stat-label">Happy Students</span>
+                </div>
+                <div class="ty-stat anim-up">
+                    <span class="stat-num">24+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="ty-stat anim-up">
+                    <span class="stat-num">30</span>
+                    <span class="stat-label">Day Money-Back Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2024 ARS Academy. All Rights Reserved.</p>
-            <p>Founded by A.S. Rakuraj | 24+ Years of Excellence</p>
-        </div>
+    <footer class="ty-footer">
+        <p>© 2024 <span class="highlight">ARS Academy</span> | A.S. Rakuraj | Tamil Nadu, India</p>
+        <p>Astro Numerology Essential Course — ₹499</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        // ===== CONFETTI =====
+        (function () {
+            const colors = ['#D4AF37', '#1a237e', '#F4E4BC', '#B8960C', '#ffffff', '#3949ab'];
+            const wrap = document.getElementById('confettiWrap');
+            for (let i = 0; i < 60; i++) {
+                const el = document.createElement('div');
+                el.className = 'confetti-piece';
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.width = (Math.random() * 8 + 6) + 'px';
+                el.style.height = (Math.random() * 8 + 6) + 'px';
+                el.style.background = colors[Math.floor(Math.random() * colors.length)];
+                el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                el.style.animationDelay = Math.random() * 3 + 's';
+                el.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                wrap.appendChild(el);
+            }
+            setTimeout(() => { if (wrap) wrap.remove(); }, 7000);
+        })();
 
+        // ===== SCROLL ANIMATIONS =====
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const siblings = [...entry.target.parentElement.querySelectorAll('.anim-up')];
+                    const idx = siblings.indexOf(entry.target);
+                    setTimeout(() => entry.target.classList.add('visible'), idx * 120);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.anim-up').forEach(el => obs.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const original = el.textContent;
+                    const num = parseInt(original.replace(/\D/g, ''));
+                    const suffix = original.replace(/\d/g, '');
+                    let current = 0;
+                    const step = num / 60;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= num) { el.textContent = original; clearInterval(timer); }
+                        else { el.textContent = Math.floor(current) + suffix; }
+                    }, 25);
+                    counterObs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
+    </script>
+
+</body>
 </html>
