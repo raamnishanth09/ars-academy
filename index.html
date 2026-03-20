@@ -16,6 +16,15 @@
 </head>
 
 <body>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+        <div class="video-modal-inner">
+            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            <div class="video-modal-frame" id="videoModalFrame"></div>
+        </div>
+    </div>
+
     <!-- SECTION 1: HERO -->
     <section class="hero">
         <div class="container hero-grid">
@@ -34,7 +43,7 @@
                 <p class="trust-line">⭐ 4500+ Students | 24+ Years Experience | Tamil Nadu</p>
             </div>
             <div class="hero-video">
-                <div class="video-thumb-container" id="heroVideoThumb" onclick="playHeroVideo()" style="cursor:pointer;">
+                <div class="video-thumb-container" id="heroVideoThumb" onclick="openVideoModal('KyXY9Q4vewg')" style="cursor:pointer;">
                     <img src="https://img.youtube.com/vi/KyXY9Q4vewg/maxresdefault.jpg"
                         alt="ARS Academy - Founder Introduction by A.S. Rakuraj"
                         class="video-thumb-img"
