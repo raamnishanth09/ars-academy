@@ -1,3 +1,15 @@
+function playHeroVideo() {
+    const container = document.getElementById('heroVideoThumb');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/KyXY9Q4vewg?autoplay=1&rel=0&modestbranding=1';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+    container.innerHTML = '';
+    container.appendChild(iframe);
+    container.style.cursor = 'default';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // ========== FAQ ACCORDION ==========

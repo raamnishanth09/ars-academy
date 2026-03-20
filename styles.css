@@ -899,6 +899,15 @@ h2 {
     aspect-ratio: 16 / 9;
     background: var(--deep-blue);
     overflow: hidden;
+    border-radius: var(--radius);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-thumb-container:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 .video-thumb-img {
