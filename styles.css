@@ -1115,6 +1115,7 @@ h2.h2-animated::after {
 
 .curriculum .transform-cta-wrap {
     align-items: flex-start;
+    align-self: flex-start;
 }
 
 /* 6. Price box glow pulse */
