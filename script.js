@@ -132,36 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.stat span').forEach(el => counterObs.observe(el));
 
     // ========== VIDEO MARQUEE MODAL ==========
-    const modal      = document.getElementById('reviewModal');
-    const modalIframe = document.getElementById('modalIframe');
-    const modalName  = document.getElementById('modalName');
-    const modalClose = document.getElementById('modalClose');
-    const modalBackdrop = document.getElementById('modalBackdrop');
-
-    function openModal(videoId, name, loc) {
-        modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-        modalName.textContent = `${name} — ${loc}, Tamil Nadu`;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modal.classList.remove('open');
-        modalIframe.src = '';
-        document.body.style.overflow = '';
-    }
-
-    // Click on any video card to open modal
     document.querySelectorAll('.vm-card').forEach(card => {
         card.addEventListener('click', () => {
-            openModal(card.dataset.video, card.dataset.name, card.dataset.loc);
+            openVideoModal(card.dataset.video);
         });
-    });
-
-    modalClose.addEventListener('click', closeModal);
-    modalBackdrop.addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeModal();
     });
 
 });
