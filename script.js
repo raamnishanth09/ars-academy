@@ -2,8 +2,8 @@ function openVideoModal(videoId) {
     var modal = document.getElementById('videoModal');
     var frame = document.getElementById('videoModalFrame');
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
-    iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&enablejsapi=1';
+    iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
     iframe.setAttribute('allowfullscreen', '');
     iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
     frame.innerHTML = '';
