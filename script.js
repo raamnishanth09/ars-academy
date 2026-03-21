@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.stat span').forEach(el => counterObs.observe(el));
 
     // ========== VIDEO MARQUEE MODAL ==========
-    const modal      = document.getElementById('videoModal');
+    const modal      = document.getElementById('reviewModal');
     const modalIframe = document.getElementById('modalIframe');
     const modalName  = document.getElementById('modalName');
     const modalClose = document.getElementById('modalClose');
