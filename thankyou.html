@@ -333,19 +333,23 @@
             <h2>🎬 Founder's <span class="highlight">Welcome Message</span></h2>
             <p>A.S. Rakuraj sir உங்களுக்கு personally ஒரு special message சொல்றாங்க — கட்டாயம் பாருங்க!</p>
             <div class="ty-video-wrap">
-                <a href="https://www.youtube.com/watch?v=2V11ouv33rk" target="_blank" rel="noopener"
-                    class="video-thumb-link" aria-label="Watch Founder Welcome Message on YouTube">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/2V11ouv33rk/maxresdefault.jpg"
-                            alt="Welcome Message from A.S. Rakuraj - ARS Academy"
-                            class="video-thumb-img"
-                            onerror="this.src='https://img.youtube.com/vi/2V11ouv33rk/hqdefault.jpg'">
-                        <div class="video-play-overlay">
-                            <div class="play-circle">&#9654;</div>
-                            <span class="watch-label">Watch on YouTube</span>
-                        </div>
+                <div class="video-thumb-container" onclick="openTyModal()" style="cursor:pointer;">
+                    <img src="https://img.youtube.com/vi/2V11ouv33rk/maxresdefault.jpg"
+                        alt="Welcome Message from A.S. Rakuraj - ARS Academy"
+                        class="video-thumb-img"
+                        onerror="this.src='https://img.youtube.com/vi/2V11ouv33rk/hqdefault.jpg'">
+                    <div class="video-play-overlay">
+                        <div class="play-circle">&#9654;</div>
                     </div>
-                </a>
+                </div>
+            </div>
+
+            <!-- VIDEO MODAL -->
+            <div id="tyVideoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+                <div style="position:relative;width:90%;max-width:900px;">
+                    <button onclick="closeTyModal()" style="position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;">&times;</button>
+                    <div id="tyVideoFrame" style="position:relative;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -498,6 +502,33 @@
         }, { threshold: 0.5 });
 
         document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
+
+        // ===== WELCOME VIDEO MODAL =====
+        function openTyModal() {
+            var modal = document.getElementById('tyVideoModal');
+            var frame = document.getElementById('tyVideoFrame');
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube-nocookie.com/embed/2V11ouv33rk?autoplay=1&rel=0&modestbranding=1';
+            iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+            frame.innerHTML = '';
+            frame.appendChild(iframe);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeTyModal() {
+            var modal = document.getElementById('tyVideoModal');
+            document.getElementById('tyVideoFrame').innerHTML = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        document.getElementById('tyVideoModal').addEventListener('click', function(e) {
+            if (e.target === this) closeTyModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeTyModal();
+        });
     </script>
 
 </body>
