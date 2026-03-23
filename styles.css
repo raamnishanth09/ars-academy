@@ -102,10 +102,11 @@ p  { font-size: 1rem; color: var(--grey); }
 }
 .btn-xl { padding: 18px 48px; font-size: 1.15rem; }
 
-.pulse { animation: pulse 2s infinite; }
+.pulse { animation: pulse 1.8s infinite; }
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(255,122,0,0.5); }
-  50%      { box-shadow: 0 0 0 16px rgba(255,122,0,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(255,122,0,0.7); }
+  70%  { box-shadow: 0 0 0 20px rgba(255,122,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,0,0); }
 }
 
 /* ── VIDEO MODAL ── */
@@ -231,7 +232,7 @@ p  { font-size: 1rem; color: var(--grey); }
   transition: transform .3s, border-color .3s, box-shadow .3s;
 }
 .why-card:hover { transform: translateY(-10px); border-color: var(--orange); box-shadow: 0 10px 30px rgba(255,122,0,0.2); }
-.why-icon { font-size: 2.4rem; margin-bottom: 16px; }
+.why-icon { font-size: 40px; margin-bottom: 16px; color: var(--orange); }
 .why-card h3 { color: var(--white); margin-bottom: 10px; font-size: 1rem; }
 .why-card p { font-size: .9rem; }
 
@@ -260,7 +261,7 @@ p  { font-size: 1rem; color: var(--grey); }
   transition: transform .25s, border-color .25s, box-shadow .25s;
   cursor: default;
 }
-.cur-card:hover { transform: scale(1.02); border-color: var(--orange); box-shadow: 0 8px 24px rgba(255,122,0,0.15); }
+.cur-card:hover { transform: scale(1.05); border-color: var(--orange); box-shadow: 0 10px 25px rgba(255,122,0,0.3); }
 .cn { font-size: 1.2rem; font-weight: 800; color: var(--orange); min-width: 36px; }
 .cur-card p { color: var(--white); font-size: .95rem; margin: 0; }
 .cur-img { border-radius: var(--radius); opacity: .9; transition: transform .3s; }
@@ -356,12 +357,18 @@ p  { font-size: 1rem; color: var(--grey); }
 /* ── FINAL CTA ── */
 .final-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--orange), var(--orange2));
+  background: var(--bg2);
   text-align: center;
 }
-.final-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.final-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, #FF7A00, #ff9a3c);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 60px rgba(255,122,0,0.35);
+}
 .final-cta h2 { color: #111; font-weight: 700; }
-.final-cta p { color: rgba(0,0,0,0.7); font-size: 1rem; }
+.final-cta p { color: rgba(0,0,0,0.75); font-size: 1rem; }
 .blink-text { font-size: .85rem; font-weight: 700; color: #111; animation: blink 1.2s infinite; }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 .shake-icon { font-size: 2.8rem; display: inline-block; animation: shake 1s infinite; }
