@@ -1551,3 +1551,132 @@ h2.h2-animated::after {
 .video-modal-close:hover {
     opacity: 1;
 }
+/* ========== PREMIUM DESIGN ENHANCEMENTS ========== */
+
+/* Gold underline accent on section headings */
+.section-heading-accent {
+    position: relative;
+    padding-bottom: 22px;
+}
+.section-heading-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+    border-radius: 2px;
+}
+
+/* Numbered transform items */
+.transform-list {
+    counter-reset: titem;
+}
+.transform-item {
+    counter-increment: titem;
+    position: relative;
+}
+.transform-item::before {
+    content: "0" counter(titem);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--gold);
+    opacity: 0.55;
+    min-width: 36px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+/* Icon circle wrapper for who-for */
+.who-icon-inline {
+    background: linear-gradient(135deg, var(--deep-blue), var(--deep-blue-light));
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(26,35,126,0.18);
+}
+
+/* Brand strip mobile text scaling */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 1.35rem;
+        letter-spacing: 2.5px;
+    }
+    .brand-tagline {
+        font-size: 0.72rem;
+    }
+}
+
+/* Section divider dots */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 36px;
+}
+.section-divider span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: inline-block;
+}
+.section-divider span:nth-child(2) {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--gold-dark);
+}
+
+/* Better mobile hero video display */
+@media (max-width: 767px) {
+    .hero-video {
+        margin-top: -10px;
+    }
+}
+
+/* Subsection title styling improvement */
+.subsection-title {
+    font-size: 1.3rem;
+    color: var(--deep-blue);
+    margin-bottom: 24px;
+    font-weight: 700;
+    position: relative;
+    padding-left: 14px;
+}
+.subsection-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+.guru-title {
+    color: var(--gold-dark) !important;
+}
+.guru-title::before {
+    background: var(--gold-dark) !important;
+}
+
+/* Premium video thumbnail frame */
+.video-thumb-container {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 3px solid rgba(212,175,55,0.4);
+    box-shadow: 0 12px 40px rgba(26,35,126,0.3);
+    transition: box-shadow 0.3s;
+}
+.video-thumb-container:hover {
+    box-shadow: 0 16px 50px rgba(212,175,55,0.35);
+}
