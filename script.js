@@ -1,96 +1,100 @@
-/* ── VIDEO MODAL ── */
-function openVideoModal(videoId) {
-  var modal = document.getElementById('videoModal');
-  var frame = document.getElementById('videoModalFrame');
-  var iframe = document.createElement('iframe');
-  iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&enablejsapi=1';
-  iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
-  frame.innerHTML = '';
-  frame.appendChild(iframe);
-  modal.classList.add('open');
+/* ARS Academy – script.js */
+
+function openVideoModal(id) {
+  var m = document.getElementById('videoModal');
+  var f = document.getElementById('videoModalFrame');
+  var i = document.createElement('iframe');
+  i.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+  i.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; picture-in-picture; fullscreen');
+  i.setAttribute('allowfullscreen', '');
+  i.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+  f.innerHTML = '';
+  f.appendChild(i);
+  m.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeVideoModal() {
-  var modal = document.getElementById('videoModal');
   document.getElementById('videoModalFrame').innerHTML = '';
-  modal.classList.remove('open');
+  document.getElementById('videoModal').classList.remove('open');
   document.body.style.overflow = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* Modal close */
+  /* Modal */
   document.getElementById('videoModal').addEventListener('click', function (e) {
     if (e.target === this) closeVideoModal();
   });
   document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
 
-  /* ── FAQ ACCORDION ── */
+  /* Video cards */
+  document.querySelectorAll('.vcard').forEach(function (c) {
+    c.addEventListener('click', function () { openVideoModal(c.dataset.video); });
+  });
+
+  /* FAQ */
   document.querySelectorAll('.faq-item').forEach(function (item) {
     item.querySelector('.faq-q').addEventListener('click', function () {
-      var isOpen = item.classList.contains('active');
+      var open = item.classList.contains('active');
       document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
-      if (!isOpen) item.classList.add('active');
+      if (!open) item.classList.add('active');
     });
   });
 
-  /* ── SMOOTH SCROLL ── */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
       e.preventDefault();
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var t = document.querySelector(this.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
-  /* ── VIDEO CARD CLICK ── */
-  document.querySelectorAll('.vm-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      openVideoModal(card.dataset.video);
-    });
-  });
-
-  /* ── STATS COUNTER ── */
-  var counterDone = false;
-  var statsStrip = document.querySelector('.stats-strip');
-  if (statsStrip) {
-    var statsObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !counterDone) {
-          counterDone = true;
-          document.querySelectorAll('.stat-num').forEach(function (el) {
-            var target = parseInt(el.dataset.count, 10);
-            var step   = Math.ceil(target / 60);
-            var current = 0;
-            var timer = setInterval(function () {
-              current += step;
-              if (current >= target) { el.textContent = target; clearInterval(timer); }
-              else { el.textContent = current; }
-            }, 22);
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-    statsObs.observe(statsStrip);
+  /* Stats counter */
+  var counted = false;
+  var statsEl = document.querySelector('.stats-sec');
+  if (statsEl) {
+    new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        document.querySelectorAll('.stat-n').forEach(function (el) {
+          var target = parseInt(el.dataset.count, 10);
+          var step = Math.ceil(target / 55);
+          var cur = 0;
+          var t = setInterval(function () {
+            cur = Math.min(cur + step, target);
+            el.textContent = cur;
+            if (cur >= target) {
+              clearInterval(t);
+              el.classList.add('done');
+            }
+          }, 20);
+        });
+      }
+    }, { threshold: 0.5 }).observe(statsEl);
   }
 
-  /* ── REVEAL ON SCROLL ── */
-  var revealObs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
+  /* Reveal on scroll */
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.reveal').forEach(function (el, i) {
-    el.style.transitionDelay = (i % 6) * 0.08 + 's';
-    revealObs.observe(el);
+  document.querySelectorAll('.reveal-up').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 5) * 0.09 + 's';
+    obs.observe(el);
   });
+
+  /* Mobile sticky: show after topbar hides, hide when price box visible */
+  var sticky = document.getElementById('mobileSticky');
+  var priceBox = document.querySelector('.price-outer');
+  if (sticky && priceBox) {
+    new IntersectionObserver(function (entries) {
+      sticky.style.opacity = entries[0].isIntersecting ? '0' : '1';
+      sticky.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.5 }).observe(priceBox);
+  }
 
 });
 
