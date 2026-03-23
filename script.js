@@ -1,5 +1,6 @@
 /* ARS Academy – script.js */
 
+/* ── Video Modal ─────────────────────────────────────── */
 function openVideoModal(id) {
   var m = document.getElementById('videoModal');
   var f = document.getElementById('videoModalFrame');
@@ -19,85 +20,121 @@ function closeVideoModal() {
   document.body.style.overflow = '';
 }
 
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeVideoModal();
+});
+
+/* ── Cursor Glow ─────────────────────────────────────── */
+(function () {
+  var glow = document.getElementById('cursorGlow');
+  if (!glow) return;
+  var mx = -200, my = -200;
+  document.addEventListener('mousemove', function (e) {
+    mx = e.clientX; my = e.clientY;
+    glow.style.transform = 'translate(' + (mx - 200) + 'px,' + (my - 200) + 'px)';
+  });
+  document.addEventListener('mouseleave', function () {
+    glow.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', function () {
+    glow.style.opacity = '1';
+  });
+})();
+
+/* ── DOM Ready ───────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* Modal */
-  document.getElementById('videoModal').addEventListener('click', function (e) {
-    if (e.target === this) closeVideoModal();
-  });
-  document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+  /* Modal close */
+  var modal = document.getElementById('videoModal');
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === this) closeVideoModal();
+    });
+  }
+  var modalClose = document.getElementById('videoModalClose');
+  if (modalClose) modalClose.addEventListener('click', closeVideoModal);
 
-  /* Video cards */
+  /* Video cards — hero + student reviews */
   document.querySelectorAll('.vcard').forEach(function (c) {
     c.addEventListener('click', function () { openVideoModal(c.dataset.video); });
   });
 
-  /* FAQ */
+  /* Guru cards */
+  document.querySelectorAll('.guru-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var vid = c.dataset.video;
+      if (vid) openVideoModal(vid);
+    });
+  });
+
+  /* FAQ accordion */
   document.querySelectorAll('.faq-item').forEach(function (item) {
-    item.querySelector('.faq-q').addEventListener('click', function () {
-      var open = item.classList.contains('active');
+    var q = item.querySelector('.faq-q');
+    if (!q) return;
+    q.addEventListener('click', function () {
+      var isOpen = item.classList.contains('active');
       document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
-      if (!open) item.classList.add('active');
+      if (!isOpen) item.classList.add('active');
     });
   });
 
   /* Smooth scroll */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      e.preventDefault();
-      var t = document.querySelector(this.getAttribute('href'));
-      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 
   /* Stats counter */
-  var counted = false;
-  var statsEl = document.querySelector('.stats-sec');
-  if (statsEl) {
+  var statsSec = document.querySelector('.stats-sec');
+  if (statsSec) {
+    var counted = false;
     new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting && !counted) {
         counted = true;
-        document.querySelectorAll('.stat-n').forEach(function (el) {
+        document.querySelectorAll('.sn').forEach(function (el) {
           var target = parseInt(el.dataset.count, 10);
-          var step = Math.ceil(target / 55);
+          if (!target) return;
+          var step = Math.ceil(target / 60);
           var cur = 0;
-          var t = setInterval(function () {
+          var timer = setInterval(function () {
             cur = Math.min(cur + step, target);
             el.textContent = cur;
-            if (cur >= target) {
-              clearInterval(t);
-              el.classList.add('done');
-            }
-          }, 20);
+            if (cur >= target) clearInterval(timer);
+          }, 18);
         });
       }
-    }, { threshold: 0.5 }).observe(statsEl);
+    }, { threshold: 0.4 }).observe(statsSec);
   }
 
-  /* Reveal on scroll */
-  var obs = new IntersectionObserver(function (entries) {
+  /* Scroll reveal */
+  var revealObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.07 });
 
-  document.querySelectorAll('.reveal-up').forEach(function (el, i) {
-    el.style.transitionDelay = (i % 5) * 0.09 + 's';
-    obs.observe(el);
+  document.querySelectorAll('.scroll-reveal').forEach(function (el, idx) {
+    el.style.transitionDelay = (idx % 6) * 0.1 + 's';
+    revealObs.observe(el);
   });
 
-  /* Mobile sticky: show after topbar hides, hide when price box visible */
+  /* Mobile sticky — hide when price-card visible */
   var sticky = document.getElementById('mobileSticky');
-  var priceBox = document.querySelector('.price-outer');
-  if (sticky && priceBox) {
+  var priceCard = document.querySelector('.price-card');
+  if (sticky && priceCard) {
     new IntersectionObserver(function (entries) {
-      sticky.style.opacity = entries[0].isIntersecting ? '0' : '1';
-      sticky.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
-    }, { threshold: 0.5 }).observe(priceBox);
+      var vis = entries[0].isIntersecting;
+      sticky.style.opacity = vis ? '0' : '1';
+      sticky.style.pointerEvents = vis ? 'none' : 'auto';
+    }, { threshold: 0.3 }).observe(priceCard);
   }
 
-});
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') closeVideoModal();
 });
