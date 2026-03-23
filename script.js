@@ -1,141 +1,99 @@
+/* ── VIDEO MODAL ── */
 function openVideoModal(videoId) {
-    var modal = document.getElementById('videoModal');
-    var frame = document.getElementById('videoModalFrame');
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&enablejsapi=1';
-    iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-    iframe.setAttribute('allowfullscreen', '');
-    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
-    frame.innerHTML = '';
-    frame.appendChild(iframe);
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  var modal = document.getElementById('videoModal');
+  var frame = document.getElementById('videoModalFrame');
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&enablejsapi=1';
+  iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+  frame.innerHTML = '';
+  frame.appendChild(iframe);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeVideoModal() {
-    var modal = document.getElementById('videoModal');
-    document.getElementById('videoModalFrame').innerHTML = '';
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
+  var modal = document.getElementById('videoModal');
+  document.getElementById('videoModalFrame').innerHTML = '';
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('videoModal').addEventListener('click', function (e) {
-        if (e.target === this) closeVideoModal();
+
+  /* Modal close */
+  document.getElementById('videoModal').addEventListener('click', function (e) {
+    if (e.target === this) closeVideoModal();
+  });
+  document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+
+  /* ── FAQ ACCORDION ── */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    item.querySelector('.faq-q').addEventListener('click', function () {
+      var isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
+      if (!isOpen) item.classList.add('active');
     });
-    document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+  });
+
+  /* ── SMOOTH SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* ── VIDEO CARD CLICK ── */
+  document.querySelectorAll('.vm-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      openVideoModal(card.dataset.video);
+    });
+  });
+
+  /* ── STATS COUNTER ── */
+  var counterDone = false;
+  var statsStrip = document.querySelector('.stats-strip');
+  if (statsStrip) {
+    var statsObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !counterDone) {
+          counterDone = true;
+          document.querySelectorAll('.stat-num').forEach(function (el) {
+            var target = parseInt(el.dataset.count, 10);
+            var step   = Math.ceil(target / 60);
+            var current = 0;
+            var timer = setInterval(function () {
+              current += step;
+              if (current >= target) { el.textContent = target; clearInterval(timer); }
+              else { el.textContent = current; }
+            }, 22);
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+    statsObs.observe(statsStrip);
+  }
+
+  /* ── REVEAL ON SCROLL ── */
+  var revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 6) * 0.08 + 's';
+    revealObs.observe(el);
+  });
+
 });
 
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeVideoModal();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    // ========== FAQ ACCORDION ==========
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            faqItems.forEach(other => {
-                if (other !== item) other.classList.remove('active');
-            });
-            item.classList.toggle('active');
-        });
-    });
-
-    // ========== SMOOTH SCROLL ==========
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-    });
-
-    // ========== CARD STAGGER ANIMATIONS ==========
-    const cardSelectors = '.transform-card, .who-card, .testimonial-card';
-    document.querySelectorAll(cardSelectors).forEach(el => {
-        el.classList.add('anim-card');
-        const siblings = [...el.parentElement.children].filter(c => c.classList.contains('anim-card'));
-        el.style.transitionDelay = `${siblings.indexOf(el) * 0.12}s`;
-    });
-
-    // Curriculum list stagger
-    document.querySelectorAll('.curriculum-list li').forEach((el, i) => {
-        el.classList.add('anim-card');
-        el.style.transitionDelay = `${i * 0.08}s`;
-    });
-
-    const cardObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                cardObs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.anim-card').forEach(el => cardObs.observe(el));
-
-    // ========== ELEMENT SCROLL ANIMATIONS ==========
-    const elObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                elObs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.price-box, .guarantee-box, .trust-stats, .video-grid').forEach(el => {
-        el.classList.add('anim-el');
-        elObs.observe(el);
-    });
-
-    // ========== H2 UNDERLINE ANIMATION ==========
-    const h2Obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('h2-animated');
-                h2Obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('h2').forEach(el => h2Obs.observe(el));
-
-    // ========== COUNTER ANIMATION ==========
-    const counterObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const original = el.textContent;
-                const num = parseInt(original.replace(/\D/g, ''));
-                const suffix = original.replace(/\d/g, '');
-                let current = 0;
-                const increment = num / 60;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= num) {
-                        el.textContent = original;
-                        clearInterval(timer);
-                    } else {
-                        el.textContent = Math.floor(current) + suffix;
-                    }
-                }, 25);
-                counterObs.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat span').forEach(el => counterObs.observe(el));
-
-    // ========== VIDEO MARQUEE MODAL ==========
-    document.querySelectorAll('.vm-card').forEach(card => {
-        card.addEventListener('click', () => {
-            openVideoModal(card.dataset.video);
-        });
-    });
-
+  if (e.key === 'Escape') closeVideoModal();
 });
