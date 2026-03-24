@@ -168,27 +168,30 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   position: relative;
   overflow: hidden;
 }
-/* Orange glow — sits behind content but above overlay */
+/* Orange glow — floating brand accent */
 .hero::before {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: rgba(255,122,0,0.2);
-  filter: blur(100px);
+  filter: blur(120px);
   top: 20%;
   left: 10%;
   pointer-events: none;
   z-index: 1;
+  animation: floatGlow 6s ease-in-out infinite;
 }
-/* Dark overlay — dims the bg image, adds blur */
+@keyframes floatGlow {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+/* Dark radial overlay — cinematic vignette */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: radial-gradient(circle, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
   pointer-events: none;
   z-index: 0;
 }
@@ -219,7 +222,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .hero h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: clamp(1.8rem, 5vw, 48px);
+  font-size: clamp(1.8rem, 5vw, 44px);
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
