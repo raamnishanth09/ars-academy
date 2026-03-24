@@ -354,14 +354,28 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 
 /* ── TRAINER ── */
 .trainer-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
+.trainer-img-col { flex: 1.2; }
+.trainer-text    { flex: 1; }
 .trainer-img-wrap {
-  position: relative; display: inline-block;
-  border-radius: var(--radius); overflow: hidden;
+  position: relative; display: block;
+  border: 2px solid rgba(255,122,0,0.3);
+  padding: 5px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow .3s;
+}
+.trainer-img-wrap:hover { box-shadow: 0 10px 30px rgba(255,122,0,0.3); }
+.trainer-img-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,122,0,0.1), transparent); z-index: 1; pointer-events: none; }
+.trainer-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  display: block;
   transition: transform .3s;
 }
-.trainer-img-wrap:hover { transform: scale(1.03); }
-.trainer-img-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,122,0,0.1), transparent); z-index: 1; }
-.trainer-img { width: 100%; max-width: 380px; border-radius: var(--radius); border: 1px solid rgba(255,122,0,0.3); display: block; margin: 0 auto; }
+.trainer-img:hover { transform: scale(1.03); }
 .trainer-role { color: var(--orange); font-weight: 600; font-size: 1rem; margin: 8px 0 22px; display: block; }
 .trainer-pts { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
 .tpt { display: flex; align-items: flex-start; gap: 14px; }
@@ -508,7 +522,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   .hero-grid { grid-template-columns: 1fr 1.2fr; }
   .hero-features { grid-template-columns: repeat(3, 1fr); }
   .cur-wrap { grid-template-columns: 1.3fr 0.7fr; }
-  .trainer-grid { grid-template-columns: 0.85fr 1.15fr; }
+  .trainer-grid { grid-template-columns: 1.2fr 1fr; }
   .gbox { flex-wrap: nowrap; }
   .mob-sticky { display: flex; }
   body { padding-bottom: 74px; }
