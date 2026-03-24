@@ -41,14 +41,6 @@ document.addEventListener('keydown', function (e) {
   });
 })();
 
-/* ── Feature Scroll Arrows ───────────────────────────── */
-function featureScrollLeft() {
-  document.getElementById('featureScroll').scrollBy({ left: -250, behavior: 'smooth' });
-}
-function featureScrollRight() {
-  document.getElementById('featureScroll').scrollBy({ left: 250, behavior: 'smooth' });
-}
-
 /* ── DOM Ready ───────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
 
