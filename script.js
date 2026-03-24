@@ -137,4 +137,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.3 }).observe(priceCard);
   }
 
+  /* ── WHY CAROUSEL CENTER FOCUS ── */
+  var whyCards = document.querySelectorAll('.why-card');
+  var whyCurrent = 1;
+  function whySetActive(idx) {
+    whyCards.forEach(function(c, i) {
+      c.classList.toggle('active', i === idx);
+    });
+    whyCurrent = idx;
+  }
+  if (whyCards.length) {
+    whySetActive(1);
+    var whyNext = document.getElementById('whyNext');
+    var whyPrev = document.getElementById('whyPrev');
+    if (whyNext) whyNext.addEventListener('click', function() {
+      whySetActive((whyCurrent + 1) % whyCards.length);
+    });
+    if (whyPrev) whyPrev.addEventListener('click', function() {
+      whySetActive((whyCurrent - 1 + whyCards.length) % whyCards.length);
+    });
+  }
+
 });
