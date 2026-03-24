@@ -42,15 +42,12 @@ document.addEventListener('keydown', function (e) {
 })();
 
 /* ── Feature Scroll Arrows ───────────────────────────── */
-document.addEventListener('DOMContentLoaded', function () {
-  var sc = document.getElementById('featureScroll');
-  var btnL = document.getElementById('scrollLeft');
-  var btnR = document.getElementById('scrollRight');
-  if (sc && btnL && btnR) {
-    btnL.addEventListener('click', function () { sc.scrollBy({ left: -240, behavior: 'smooth' }); });
-    btnR.addEventListener('click', function () { sc.scrollBy({ left: 240, behavior: 'smooth' }); });
-  }
-});
+function featureScrollLeft() {
+  document.getElementById('featureScroll').scrollBy({ left: -250, behavior: 'smooth' });
+}
+function featureScrollRight() {
+  document.getElementById('featureScroll').scrollBy({ left: 250, behavior: 'smooth' });
+}
 
 /* ── DOM Ready ───────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
