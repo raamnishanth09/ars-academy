@@ -148,6 +148,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (whyCards.length) {
     whySetActive(1);
+    whyCards.forEach(function(card, i) {
+      card.addEventListener('mouseenter', function() { whySetActive(i); });
+    });
     var whyNext = document.getElementById('whyNext');
     var whyPrev = document.getElementById('whyPrev');
     if (whyNext) whyNext.addEventListener('click', function() {

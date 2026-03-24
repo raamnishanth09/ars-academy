@@ -355,11 +355,13 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   opacity: 0.5;
   transform: scale(0.88);
 }
-.why-card.active {
+.why-card.active,
+.why-card:hover {
   opacity: 1;
   transform: scale(1.06);
   border-color: var(--orange);
-  box-shadow: 0 10px 40px rgba(255,122,0,0.3);
+  box-shadow: 0 10px 40px rgba(255,122,0,0.35);
+  background: rgba(255,122,0,0.07);
 }
 .why-arrow {
   background: rgba(255,122,0,0.15);
