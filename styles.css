@@ -261,10 +261,10 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .features-label { text-align: center; margin-bottom: 16px; font-size: 18px; font-weight: 600; color: var(--orange); letter-spacing: 1px; }
 .hero-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 680px; margin: 0 auto; text-align: left; }
 .feature-box {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,122,0,0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,122,0,0.2);
+  border: 1px solid var(--orange);
   border-radius: 12px;
   padding: 18px 16px;
   font-size: .88rem;
@@ -275,7 +275,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   opacity: 0;
   transform: translateY(20px);
   animation: featUp 0.6s ease forwards;
-  transition: transform .3s, border-color .3s, box-shadow .3s;
+  transition: transform .3s, box-shadow .3s;
 }
 .feature-box:nth-child(1) { animation-delay: 0.1s; }
 .feature-box:nth-child(2) { animation-delay: 0.2s; }
