@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -40,35 +42,24 @@
   <div class="float-shape fs3"></div>
   <div class="float-shape fs4"></div>
 
-  <div class="wrap hero-grid">
-    <div class="hero-left">
-      <div class="hero-brand-row fade-up">
-        <img src="brand_%20assests/logo.jpeg" alt="ARS Academy" class="h-logo">
-        <span class="h-brand">ARS ACADEMY</span>
-      </div>
-      <div class="hero-badge fade-up" style="animation-delay:.1s">🎓 Limited Seats — First 500 Only</div>
-      <h1 class="hero-h1 fade-up" style="animation-delay:.2s">
-        Want to More Than<br>
-        <span class="orange glow-heading">DOUBLE</span> Your<br>Monthly Income?
-      </h1>
-      <p class="hero-sub fade-up" style="animation-delay:.4s">
-        தமிழ்ல CRISP-ஆ கற்றுக்கொள்ளக்கூடிய<br>
-        <strong>ASTRO NUMEROLOGY ESSENTIAL COURSE</strong><br>
-        100% உங்கள் வாழ்க்கையின் தரத்தை உயர்த்தும் பயிற்சி
-      </p>
-      <ul class="hero-list fade-up" style="animation-delay:.5s">
-        <li><span class="tick">✔</span> 1 Month Online Video Course</li>
-        <li><span class="tick">✔</span> Tamil + Thanglish Explanation</li>
-        <li><span class="tick">✔</span> Qualification தேவையில்லை</li>
-        <li><span class="tick">✔</span> Course Completion Certificate</li>
-        <li><span class="tick">✔</span> 24+ Years Experience-Based Secrets</li>
-      </ul>
-      <a href="https://arsacademy.akamai.net.in/" target="_blank" rel="noopener" class="btn-orange btn-lg fade-up" style="animation-delay:.6s">
-        👉 இப்பவே Enroll பண்ணுங்கள் — ₹499 மட்டுமே!
-      </a>
-      <p class="hero-trust fade-up" style="animation-delay:.7s">⭐ 4500+ Students &nbsp;|&nbsp; 24+ Years &nbsp;|&nbsp; Tamil Nadu</p>
-    </div>
-    <div class="hero-right fade-up" style="animation-delay:.3s">
+  <div class="wrap hero-single">
+
+    <!-- STEP 1: Hook -->
+    <p class="hero-hook fade-up">⚡ Wait! Want to More Than <strong>DOUBLE</strong> Your Monthly Income?</p>
+
+    <!-- STEP 2: Main Heading -->
+    <h1 class="hero-h1 fade-up" style="animation-delay:.1s">
+      தமிழில் CRISP-ஆ ஒரு<br>
+      <span class="orange">ASTRO NUMEROLOGY</span> COURSE
+    </h1>
+
+    <!-- STEP 3: Subtext -->
+    <p class="hero-sub fade-up" style="animation-delay:.2s">
+      100% உங்கள் வாழ்க்கையின் தரத்தை உயர்த்தும் பயிற்சி — வெறும் <strong>₹499</strong>
+    </p>
+
+    <!-- STEP 4: Video centered -->
+    <div class="hero-vid-center fade-up" style="animation-delay:.3s">
       <div class="hero-vid-wrap" onclick="openVideoModal('KyXY9Q4vewg')">
         <img src="https://img.youtube.com/vi/KyXY9Q4vewg/maxresdefault.jpg"
              onerror="this.src='https://img.youtube.com/vi/KyXY9Q4vewg/hqdefault.jpg'"
@@ -80,6 +71,22 @@
         <div class="vid-label">▶ Founder Introduction பாருங்கள்</div>
       </div>
     </div>
+
+    <!-- STEP 5: Benefits -->
+    <div class="hero-features fade-up" style="animation-delay:.4s">
+      <div class="feature-box">✔ 1 Month Online Video Course</div>
+      <div class="feature-box">✔ Tamil + Thanglish Explanation</div>
+      <div class="feature-box">✔ Qualification தேவையில்லை</div>
+      <div class="feature-box">✔ Course Completion Certificate</div>
+      <div class="feature-box">✔ 24+ Years Experience-Based Secrets</div>
+    </div>
+
+    <!-- STEP 6: CTA -->
+    <a href="https://arsacademy.akamai.net.in/" target="_blank" rel="noopener" class="btn-orange btn-lg hero-cta fade-up" style="animation-delay:.5s">
+      👉 இப்பவே Enroll பண்ணுங்கள் — ₹499 மட்டுமே!
+    </a>
+    <p class="hero-trust fade-up" style="animation-delay:.6s">⭐ 4500+ Students &nbsp;|&nbsp; 24+ Years &nbsp;|&nbsp; Tamil Nadu</p>
+
   </div>
 </section>
 
@@ -132,26 +139,26 @@
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">WHAT YOU WILL GAIN</p>
-      <h2>இந்த Course உங்கள் Life-ல என்ன <span class="orange">Change</span> கொண்டு வரும்?</h2>
+      <h2 data-aos="fade-up">இந்த Course உங்கள் Life-ல என்ன <span class="orange">Change</span> கொண்டு வரும்?</h2>
     </div>
     <div class="why-grid">
-      <div class="why-card scroll-reveal">
-        <div class="why-icon">💰</div>
+      <div class="why-card scroll-reveal" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon"><i class="fa-solid fa-sack-dollar"></i></div>
         <h3>Investment இல்லாம Income</h3>
         <p>Zero investment-ல numerology consultation business start பண்ணி income generate பண்ண clarity கிடைக்கும்</p>
       </div>
-      <div class="why-card scroll-reveal">
-        <div class="why-icon">🔢</div>
+      <div class="why-card scroll-reveal" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon"><i class="fa-solid fa-star"></i></div>
         <h3>Lucky Number & Name Secrets</h3>
         <p>உங்கள் Lucky Number, Lucky Name secrets use பண்ணி life-ல success attract பண்ணலாம்</p>
       </div>
-      <div class="why-card scroll-reveal">
-        <div class="why-icon">⏰</div>
+      <div class="why-card scroll-reveal" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon"><i class="fa-solid fa-clock"></i></div>
         <h3>Part-Time Income</h3>
         <p>Job இருந்தாலும் சரி — part-time numerology income start பண்ண முடியும்</p>
       </div>
-      <div class="why-card scroll-reveal">
-        <div class="why-icon">🤝</div>
+      <div class="why-card scroll-reveal" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
         <h3>Consultation Earn பண்ணலாம்</h3>
         <p>Others-க்கு consultation கொடுத்து monthly income double பண்ணலாம்</p>
       </div>
@@ -171,32 +178,32 @@
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">WHO IS THIS FOR</p>
-      <h2>இந்த Course <span class="orange">யாருக்கெல்லாம்?</span></h2>
+      <h2 data-aos="fade-up">இந்த Course <span class="orange">யாருக்கெல்லாம்?</span></h2>
       <p class="sec-sub">Who Is This Astro Numerology Course For?</p>
     </div>
     <div class="who-list">
-      <div class="who-row scroll-reveal">
+      <div class="who-row scroll-reveal" data-aos="fade-right" data-aos-delay="0">
         <div class="who-ic">🏢</div>
         <div class="who-txt">
           <strong>Viyaapaarikal <span class="orange-sm">– Business Owners</span></strong>
           <p>Investment illama business செய்து income increase செய்ய விரும்புவோருக்கு</p>
         </div>
       </div>
-      <div class="who-row scroll-reveal">
+      <div class="who-row scroll-reveal" data-aos="fade-right" data-aos-delay="100">
         <div class="who-ic">🕉️</div>
         <div class="who-txt">
           <strong>Aanmeega Nipunarkal <span class="orange-sm">– Spiritual Professionals</span></strong>
           <p>Jodidar, Vastu consultant, Kovil poosari, Astro practitioners</p>
         </div>
       </div>
-      <div class="who-row scroll-reveal">
+      <div class="who-row scroll-reveal" data-aos="fade-right" data-aos-delay="200">
         <div class="who-ic">💼</div>
         <div class="who-txt">
           <strong>Paguthi Nera Varumanam <span class="orange-sm">– Part-Time Seekers</span></strong>
           <p>Job இருந்தாலும் extra income earn பண்ண ஆசை உள்ளவர்களுக்கு</p>
         </div>
       </div>
-      <div class="who-row scroll-reveal">
+      <div class="who-row scroll-reveal" data-aos="fade-right" data-aos-delay="300">
         <div class="who-ic">📚</div>
         <div class="who-txt">
           <strong>Puthiyavarkal <span class="orange-sm">– Beginners</span></strong>
@@ -214,7 +221,7 @@
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">COURSE CONTENT</p>
-      <h2>நீங்க என்னென்ன <span class="orange">கத்துக்க போறீங்க?</span></h2>
+      <h2 data-aos="fade-up">நீங்க என்னென்ன <span class="orange">கத்துக்க போறீங்க?</span></h2>
     </div>
     <div class="cur-wrap">
       <div class="cur-list">
@@ -248,7 +255,7 @@
     </div>
     <div class="trainer-text scroll-reveal">
       <p class="sec-tag" style="text-align:left;">YOUR MENTOR</p>
-      <h2 style="text-align:left;">A.S. <span class="orange">Rakuraj</span></h2>
+      <h2 data-aos="fade-left" style="text-align:left;">A.S. <span class="orange">Rakuraj</span></h2>
       <p class="trainer-role">Founder – ARS Academy</p>
       <div class="trainer-pts">
         <div class="tpt"><span class="tpt-icon">📅</span><p>24+ years of Numerology, Astrology & Vastu research</p></div>
@@ -266,14 +273,14 @@
 <!-- ════════════════════════════
      GURU SECTION
 ════════════════════════════ -->
-<section class="sec-dark guru">
+<section class="sec-primary guru">
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">TESTIMONIALS</p>
-      <h2>🙏 குரு <span class="orange">வாழ்த்துரை</span></h2>
+      <h2 data-aos="zoom-in">🙏 குரு <span class="orange">வாழ்த்துரை</span></h2>
     </div>
     <div class="guru-grid">
-      <div class="guru-card scroll-reveal" data-video="qrjCSxOFuRY">
+      <div class="guru-card scroll-reveal" data-aos="fade-right" data-video="qrjCSxOFuRY">
         <div class="guru-thumb">
           <img src="https://img.youtube.com/vi/qrjCSxOFuRY/mqdefault.jpg" alt="Dr. AMBANI RAJAR" loading="lazy">
           <div class="g-play">▶</div>
@@ -283,7 +290,7 @@
           <span>Ph.D (Astro) · AAA Numerologist</span>
         </div>
       </div>
-      <div class="guru-card scroll-reveal" data-video="pPYpR5nGoxY">
+      <div class="guru-card scroll-reveal" data-aos="fade-left" data-video="pPYpR5nGoxY">
         <div class="guru-thumb">
           <img src="https://img.youtube.com/vi/pPYpR5nGoxY/mqdefault.jpg" alt="M. KARTHIKEYAN" loading="lazy">
           <div class="g-play">▶</div>
@@ -320,9 +327,9 @@
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">SPECIAL OFFER</p>
-      <h2>Special Launch <span class="orange">Offer 🎉</span></h2>
+      <h2 data-aos="zoom-in">Special Launch <span class="orange">Offer 🎉</span></h2>
     </div>
-    <div class="price-card scroll-reveal">
+    <div class="price-card scroll-reveal" data-aos="zoom-in">
       <div class="price-badge">LIMITED TIME</div>
       <div class="price-amt"><span class="pc">₹</span><span class="pa">499</span><span class="po">only</span></div>
       <p class="price-note">★ First 500 Participants மட்டுமே இந்த விலையில் ★</p>
@@ -360,7 +367,7 @@
   <div class="wrap">
     <div class="sec-head scroll-reveal">
       <p class="sec-tag">FAQ</p>
-      <h2>Frequently Asked <span class="orange">Questions</span></h2>
+      <h2 data-aos="fade-up">Frequently Asked <span class="orange">Questions</span></h2>
     </div>
     <div class="faq-list">
       <div class="faq-item scroll-reveal"><button class="faq-q">Payment பண்ணினா உடனே access கிடைக்குமா?<span>+</span></button><div class="faq-a"><p>Yes — payment பண்ணிய moment-லிருந்தே videos access கிடைக்கும்.</p></div></div>
@@ -379,7 +386,7 @@
      FINAL CTA
 ════════════════════════════ -->
 <section class="final-cta">
-  <div class="wrap final-wrap">
+  <div class="wrap final-wrap" data-aos="zoom-in">
     <p class="blink-text">⚡ Limited seats remaining!</p>
     <div class="shake-icon">⏰</div>
     <h2>Time Is Running Out!</h2>
@@ -405,6 +412,8 @@
   <p class="f-copy">© 2024 ARS Academy. All Rights Reserved.</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 60 });</script>
 </body>
 </html>
