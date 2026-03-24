@@ -355,10 +355,12 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 }
 .why-card:hover,
 .why-card.active {
-  transform: scale(1.06);
-  border-color: var(--orange);
-  box-shadow: 0 10px 40px rgba(255,122,0,0.35);
-  background: rgba(255,122,0,0.07);
+  transform: scale(1.08) !important;
+  border-color: var(--orange) !important;
+  box-shadow: 0 12px 40px rgba(255,122,0,0.45) !important;
+  background: rgba(255,122,0,0.1) !important;
+  z-index: 2;
+  position: relative;
 }
 .why-icon { font-size: 40px; margin-bottom: 16px; color: var(--orange); line-height: 1; }
 .why-icon i { font-size: 36px; color: var(--orange); }
