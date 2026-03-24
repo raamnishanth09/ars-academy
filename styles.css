@@ -234,7 +234,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .hero-list { margin-bottom: 30px; }
 .hero-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: .97rem; color: var(--white); }
 .tick { background: var(--orange); color: #111; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; flex-shrink: 0; }
-.hero-vid-center { max-width: 520px; margin: 0 auto; }
+.hero-vid-center { max-width: 520px; margin: 0 auto 28px; }
 .hero-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 600px; margin: 0 auto; text-align: left; }
 .feature-box {
   background: #111;
