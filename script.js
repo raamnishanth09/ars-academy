@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var gainIdx = 0;
     setInterval(function() {
       gainIdx = (gainIdx + 1) % gainCards.length;
-      gainCards[gainIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      gainSlider.scrollTo({ left: gainCards[gainIdx].offsetLeft - gainSlider.offsetLeft, behavior: 'smooth' });
     }, 3000);
   }
 
