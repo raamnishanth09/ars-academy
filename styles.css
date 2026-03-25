@@ -407,8 +407,8 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 }
 @media (max-width: 768px) {
   .circle-wrapper { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
-  .circle-container { order: 1; flex: 0 0 100% !important; width: 280px !important; height: 280px !important; margin: 0 auto; }
-  .who-side { order: 2; display: block !important; flex: 1 1 calc(50% - 8px) !important; width: auto !important; font-size: 13px !important; text-align: left !important; }
+  .circle-container { order: 0 !important; flex: 0 0 280px !important; width: 280px !important; height: 280px !important; }
+  .who-side { order: 1 !important; display: block !important; flex: 1 1 140px !important; max-width: calc(50% - 8px) !important; width: auto !important; font-size: 13px !important; text-align: left !important; }
   .circle-center { width: 80px !important; height: 80px !important; font-size: 14px !important; }
   .circle-item { width: 68px !important; height: 68px !important; font-size: 17px !important; }
   .circle-item span { font-size: .56rem; }
