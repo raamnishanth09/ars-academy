@@ -441,9 +441,14 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .node-lines {
   position: absolute; top: 0; left: 0;
   width: 100%; height: 100%;
-  z-index: 0; pointer-events: none;
+  z-index: 1; pointer-events: none;
 }
-.node-lines line { stroke: rgba(255,122,0,0.3); stroke-width: 1; }
+.node-lines line {
+  stroke: rgba(255,122,0,0.35);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(255,122,0,0.4));
+}
 
 /* Circle nodes */
 .circle-item {
@@ -457,6 +462,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   text-align: center; font-size: 22px;
   color: var(--white); z-index: 2;
   cursor: pointer;
+  z-index: 3;
   animation: nodePulse 3s infinite;
   transition: transform .3s, background .3s, border-color .3s;
 }
