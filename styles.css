@@ -370,20 +370,19 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 @media (max-width: 768px) {
   .why-carousel-wrap { padding: 10px 0; }
   .why-carousel {
-    flex-direction: column;
-    gap: 16px;
-    overflow: visible;
-    padding: 0 15px;
+    flex-direction: column !important;
+    gap: 16px !important;
+    overflow: visible !important;
+    padding: 0 !important;
   }
   .why-card {
-    flex: 0 0 auto;
-    width: 100%;
-    padding: 20px;
-    text-align: left;
-    opacity: 1 !important;
-    transform: none !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 20px !important;
+    text-align: left !important;
   }
-  .why-card.active { transform: scale(1.02) !important; }
+  .why-card.active { transform: scale(1.02) !important; box-shadow: 0 6px 20px rgba(255,122,0,0.3) !important; }
 }
 
 /* ── WHO LIST ── */
