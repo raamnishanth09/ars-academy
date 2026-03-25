@@ -691,19 +691,85 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 }
 
 /* ── RESPONSIVE ── */
+
+/* Show sticky CTA on all screens */
+.mob-sticky { display: flex; }
+body { padding-bottom: 74px; }
+
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.6rem; letter-spacing: 0; }
-  .hero-hook { font-size: 15px; }
-  .trainer-img { height: auto; max-height: 280px; }
+  /* Hero */
+  .hero { padding: 40px 16px; }
+  .hero h1 { font-size: 1.5rem; letter-spacing: 0; }
+  .hero-hook { font-size: 14px; }
+  .hero-sub { font-size: .9rem; padding: 10px 14px; }
+  .hero-trust { font-size: .8rem; }
+  .hero-vid-center { max-width: 100%; }
+  /* Features */
   .feature-box { flex: 0 0 100%; }
+  .features-label { font-size: 15px; }
+  /* Trainer */
+  .trainer-img { height: auto; max-height: 250px; }
+  .trainer-pts { gap: 10px; }
+  /* Stats */
+  .sn { font-size: 2rem; }
+  /* Final CTA */
+  .final-wrap { padding: 40px 20px; }
+  .final-cta h2 { font-size: 1.3rem; }
+  /* Sections */
+  .sec-primary, .sec-dark { padding: 60px 0; }
+  /* Circle */
+  .circle-container { width: 260px; height: 260px; }
+  .circle-item { width: 78px; height: 78px; font-size: .65rem; }
+  .circle-item strong { font-size: .62rem; }
+  .circle-item p { display: none; }
+  .ci-ic { font-size: 18px; }
+  .circle-center { width: 68px; height: 68px; font-size: 16px; }
+  .circle-container::before { width: 180px; height: 180px; }
+  .circle-container::after { width: 240px; height: 240px; }
+  /* Who side text */
+  .who-side { width: 100%; text-align: center; font-size: 13px; }
+  .who-side p { padding-left: 0; }
+  .who-side p::before { display: none; }
+  /* Guarantee */
+  .gbox { flex-direction: column; gap: 14px; padding: 22px; }
+  /* FAQ */
+  .faq-q { font-size: .88rem; }
+  /* Wrap padding */
+  .wrap { padding: 0 16px; }
+  /* Hide cursor glow & floating shapes on mobile */
+  #cursorGlow { display: none; }
+  .float-shape { display: none; }
+  /* Price */
+  .price-card { padding: 30px 18px; }
 }
+
+@media (max-width: 360px) {
+  .hero h1 { font-size: 1.3rem; }
+  .circle-container { width: 220px; height: 220px; }
+  .circle-item { width: 66px; height: 66px; }
+  .circle-center { width: 58px; height: 58px; font-size: 14px; }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .feature-box { flex: 0 0 calc(50% - 8px); }
+  .final-wrap { padding: 50px 28px; }
+  .circle-container { width: 320px; height: 320px; }
+  .circle-item { width: 90px; height: 90px; }
+  .circle-center { width: 80px; height: 80px; }
+  .circle-container::before { width: 200px; height: 200px; }
+  .circle-container::after { width: 290px; height: 290px; }
+}
+
 @media (min-width: 560px) { .stats-grid { grid-template-columns: repeat(4,1fr); } }
+
 @media (min-width: 768px) {
   .hero-grid { grid-template-columns: 1fr 1.2fr; }
   .cur-wrap { grid-template-columns: 1.3fr 0.7fr; }
   .trainer-grid { grid-template-columns: 1.2fr 1fr; }
   .gbox { flex-wrap: nowrap; }
-  .mob-sticky { display: flex; }
-  body { padding-bottom: 74px; }
+  .wrap { padding: 0 24px; }
+  #cursorGlow { display: block; }
+  .float-shape { display: block; }
 }
+
 @media (min-width: 1024px) { .hero { padding: 70px 0 90px; } }
