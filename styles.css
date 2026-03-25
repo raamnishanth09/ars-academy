@@ -25,6 +25,7 @@ body {
   line-height: 1.7;
   font-size: 16px;
   overflow-x: hidden;
+  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; }
@@ -367,8 +368,22 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .why-card h3 { color: var(--white); margin-bottom: 10px; font-size: 1rem; }
 .why-card p { font-size: .9rem; }
 @media (max-width: 768px) {
-  .why-card { flex: 0 0 80%; }
-  .why-card.active { transform: scale(1.03); }
+  .why-carousel-wrap { padding: 10px 0; }
+  .why-carousel {
+    flex-direction: column;
+    gap: 16px;
+    overflow: visible;
+    padding: 0 15px;
+  }
+  .why-card {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .why-card.active { transform: scale(1.02) !important; }
 }
 
 /* ── WHO LIST ── */
