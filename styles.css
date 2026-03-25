@@ -17,14 +17,13 @@
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Poppins', 'Noto Sans Tamil', sans-serif;
   background: var(--bg);
   color: var(--white);
   line-height: 1.7;
   font-size: 16px;
-  overflow-x: hidden;
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
@@ -135,7 +134,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .vmodal-close:hover { background: rgba(255,122,0,0.4); }
 
 /* ── MOBILE STICKY ── */
-.mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; padding: 12px 18px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 12px; transition: opacity .3s; }
+.mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; width: 100%; z-index: 500; padding: 12px 18px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 12px; transition: opacity .3s; box-sizing: border-box; }
 .ms-info { line-height: 1.2; font-size: .82rem; color: var(--grey); }
 .ms-info strong { display: block; color: var(--orange); font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .ms-btn { padding: 12px 22px; font-size: .9rem; white-space: nowrap; flex-shrink: 0; animation: pulse 2s infinite; }
@@ -410,9 +409,9 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   color: var(--orange); font-weight: 700;
 }
 @media (max-width: 768px) {
-  .circle-wrapper { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
-  .circle-container { order: 0 !important; flex: 0 0 90vw !important; width: 90vw !important; height: 90vw !important; max-width: 340px !important; max-height: 340px !important; }
-  .who-side { order: 1 !important; display: block !important; flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; font-size: 14px !important; text-align: left !important; padding: 0 8px !important; }
+  .circle-wrapper { flex-direction: column !important; align-items: center !important; gap: 24px !important; }
+  .circle-container { width: calc(100vw - 32px) !important; height: calc(100vw - 32px) !important; max-width: 320px !important; max-height: 320px !important; flex-shrink: 0 !important; }
+  .who-side { display: block !important; width: 100% !important; max-width: 100% !important; font-size: 14px !important; text-align: left !important; padding: 0 !important; }
   .circle-center { width: 80px !important; height: 80px !important; font-size: 14px !important; }
   .circle-item { width: 68px !important; height: 68px !important; font-size: 17px !important; }
   .circle-item span { font-size: .56rem; }
