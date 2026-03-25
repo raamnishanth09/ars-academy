@@ -144,7 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var gainIdx = 0;
     setInterval(function() {
       gainIdx = (gainIdx + 1) % gainCards.length;
-      gainSlider.scrollTo({ left: gainCards[gainIdx].offsetLeft - gainSlider.offsetLeft, behavior: 'smooth' });
+      var cardLeft = gainCards[gainIdx].getBoundingClientRect().left;
+      var sliderLeft = gainSlider.getBoundingClientRect().left;
+      gainSlider.scrollLeft += cardLeft - sliderLeft;
     }, 3000);
   }
 

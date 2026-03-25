@@ -357,11 +357,11 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .gain-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 8px; }
 .gain-card p  { color: var(--grey); font-size: .88rem; margin: 0; }
 @media (max-width: 768px) {
-  .gain-slider { padding: 10px 16px 20px; }
-  .gain-card { flex: 0 0 85%; min-width: 0; }
+  .gain-slider { padding: 0 16px 20px; scroll-padding-left: 16px; }
+  .gain-card { flex: 0 0 calc(100% - 32px) !important; scroll-snap-align: start; }
 }
 @media (min-width: 769px) {
-  .gain-slider { overflow: visible; flex-wrap: wrap; }
+  .gain-slider { overflow: visible; flex-wrap: wrap; justify-content: center; }
   .gain-card { flex: 0 0 calc(25% - 15px); }
 }
 
