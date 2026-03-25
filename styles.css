@@ -466,19 +466,6 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   box-shadow: 0 0 25px rgba(255,122,0,0.5);
   animation: none;
 }
-/* Tooltip */
-.circle-item::after {
-  content: attr(data-text);
-  position: absolute;
-  bottom: -52px;
-  width: 160px; left: 50%; transform: translateX(-50%);
-  font-size: .7rem; color: #aaa; opacity: 0;
-  transition: opacity .3s; pointer-events: none;
-  line-height: 1.4; background: rgba(0,0,0,0.7);
-  padding: 4px 8px; border-radius: 6px;
-}
-.ci-top::after { bottom: auto; top: -58px; }
-.circle-item:hover::after { opacity: 1; }
 @keyframes nodePulse {
   0%   { box-shadow: 0 0 8px rgba(255,122,0,0.2); }
   50%  { box-shadow: 0 0 22px rgba(255,122,0,0.6); }
