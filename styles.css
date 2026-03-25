@@ -401,14 +401,17 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   width: 220px; color: #aaa; font-size: 15px; line-height: 1.6;
 }
 .who-side p {
-  margin-bottom: 15px; position: relative; padding-left: 22px;
+  margin-bottom: 15px;
 }
-.who-side p::before { content: "✔"; position: absolute; left: 0; color: var(--orange); }
 @media (max-width: 768px) {
-  .circle-wrapper { flex-direction: column; gap: 30px; }
+  .circle-wrapper { flex-direction: column; gap: 25px; }
   .who-side { width: 100%; text-align: center; }
-  .who-side p { padding-left: 0; }
-  .who-side p::before { display: none; }
+  .circle-container { width: 300px; height: 300px; }
+  .circle-center { width: 85px; height: 85px; font-size: 16px; }
+  .circle-item { width: 75px; height: 75px; font-size: 18px; }
+  .circle-item span { font-size: .58rem; }
+  .circle-container::before { width: 185px; height: 185px; }
+  .circle-container::after { width: 265px; height: 265px; }
 }
 .circle-container {
   position: relative;
@@ -763,8 +766,6 @@ body { padding-bottom: 74px; }
   .circle-container::after { width: 240px; height: 240px; }
   /* Who side text */
   .who-side { width: 100%; text-align: center; font-size: 13px; }
-  .who-side p { padding-left: 0; }
-  .who-side p::before { display: none; }
   /* Guarantee */
   .gbox { flex-direction: column; gap: 14px; padding: 22px; }
   /* FAQ */
