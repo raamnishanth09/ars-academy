@@ -432,10 +432,10 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .circle-center span { font-size: 11px; color: var(--orange); font-weight: 700; }
 .circle-item {
   position: absolute;
-  width: 120px; height: 120px;
+  width: 120px !important; height: 120px !important;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,122,0,0.2);
-  border-radius: 50%;
+  border-radius: 50% !important;
   padding: 12px;
   text-align: center;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -473,7 +473,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 }
 @media (max-width: 540px) {
   .circle-container { width: 320px; height: 320px; }
-  .circle-item { width: 90px; padding: 10px 8px; }
+  .circle-item { width: 90px !important; height: 90px !important; padding: 8px; border-radius: 50% !important; }
   .circle-item strong { font-size: .7rem; }
   .circle-item p { font-size: .65rem; }
   .circle-center { width: 80px; height: 80px; font-size: 18px; }
