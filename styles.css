@@ -401,7 +401,11 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   width: 220px; color: #aaa; font-size: 15px; line-height: 1.6;
 }
 .who-side p {
-  margin-bottom: 15px;
+  margin-bottom: 15px; padding-left: 22px; position: relative;
+}
+.who-side p::before {
+  content: "✔"; position: absolute; left: 0;
+  color: var(--orange); font-weight: 700;
 }
 @media (max-width: 768px) {
   .circle-wrapper { flex-direction: column; gap: 25px; }
