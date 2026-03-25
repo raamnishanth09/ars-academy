@@ -137,40 +137,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.3 }).observe(priceCard);
   }
 
-  /* ── WHY CARDS AUTO HIGHLIGHT ── */
-  var whyCards = document.querySelectorAll('.why-card');
-  var whyCurrent = 0;
-  var whyTimer;
-  function whyActivate(idx) {
-    whyCards.forEach(function(c) { c.classList.remove('active'); });
-    if (whyCards[idx]) whyCards[idx].classList.add('active');
-    whyCurrent = idx;
-  }
-  function whyAutoPlay() {
-    whyTimer = setInterval(function() {
-      whyActivate((whyCurrent + 1) % whyCards.length);
-    }, 2000);
-  }
-  if (whyCards.length) {
-    whyActivate(0);
-    whyAutoPlay();
-    whyCards.forEach(function(card, i) {
-      card.addEventListener('mouseenter', function() {
-        clearInterval(whyTimer);
-        whyActivate(i);
-      });
-      card.addEventListener('mouseleave', function() {
-        whyAutoPlay();
-      });
-      card.addEventListener('click', function() {
-        clearInterval(whyTimer);
-        whyActivate(i);
-      });
-      card.addEventListener('touchstart', function() {
-        clearInterval(whyTimer);
-        whyActivate(i);
-      }, { passive: true });
-    });
+  /* ── GAIN CARDS AUTO SWIPE (mobile) ── */
+  var gainSlider = document.querySelector('.gain-slider');
+  if (gainSlider) {
+    var gainCards = gainSlider.querySelectorAll('.gain-card');
+    var gainIdx = 0;
+    setInterval(function() {
+      gainIdx = (gainIdx + 1) % gainCards.length;
+      gainCards[gainIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }, 3000);
   }
 
 });
