@@ -134,10 +134,10 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .vmodal-close:hover { background: rgba(255,122,0,0.4); }
 
 /* ── MOBILE STICKY ── */
-.mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; width: 100%; z-index: 500; padding: 8px 12px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 8px; transition: opacity .3s; box-sizing: border-box; }
-.ms-info { line-height: 1.1; font-size: .78rem; color: var(--grey); }
-.ms-info strong { display: block; color: var(--orange); font-size: 1.3rem; font-weight: 900; line-height: 1; }
-.ms-btn { padding: 10px 16px; font-size: .85rem; white-space: nowrap; flex-shrink: 0; animation: pulse 2s infinite; }
+.mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; width: 100%; z-index: 500; padding: 8px 12px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 8px; transition: opacity .3s; box-sizing: border-box; overflow: hidden; }
+.ms-info { line-height: 1.1; font-size: .75rem; color: var(--grey); flex-shrink: 0; }
+.ms-info strong { display: block; color: var(--orange); font-size: 1.2rem; font-weight: 900; line-height: 1; }
+.ms-btn { padding: 10px 14px; font-size: .78rem; white-space: nowrap; flex: 1 1 auto; min-width: 0; text-align: center; animation: pulse 2s infinite; }
 
 /* ── SECTION BACKGROUNDS ── */
 .sec-primary { padding: 90px 0; background: var(--bg); }
