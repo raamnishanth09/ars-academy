@@ -436,15 +436,16 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,122,0,0.2);
   border-radius: 50% !important;
-  padding: 12px;
+  padding: 10px;
   text-align: center;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden;
   transition: transform .3s, border-color .3s, box-shadow .3s;
 }
 .circle-item:hover { transform: scale(1.08); border-color: var(--orange); box-shadow: 0 8px 24px rgba(255,122,0,0.3); }
-.ci-ic { font-size: 24px; margin-bottom: 6px; }
-.circle-item strong { display: block; color: var(--white); font-size: .8rem; margin-bottom: 3px; }
-.circle-item p { color: var(--grey); font-size: .72rem; margin: 0; }
+.ci-ic { font-size: 22px; margin-bottom: 4px; flex-shrink: 0; }
+.circle-item strong { display: block; color: var(--white); font-size: .68rem; line-height: 1.2; margin-bottom: 2px; }
+.circle-item p { color: var(--grey); font-size: .6rem; margin: 0; line-height: 1.2; }
 /* positions */
 .ci-top    { top: 0;   left: 50%; transform: translateX(-50%); }
 .ci-right  { top: 50%; right: 0;  transform: translateY(-50%); }
