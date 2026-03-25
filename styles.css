@@ -136,7 +136,8 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 
 /* ── MOBILE STICKY ── */
 .mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; padding: 12px 18px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 12px; transition: opacity .3s; }
-.ms-info { line-height: 1.2; font-size: .82rem; color: var(--grey); }
+.ms-info { display: flex; align-items: center; gap: 10px; line-height: 1.2; font-size: .82rem; color: var(--grey); }
+.ms-logo { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--orange); flex-shrink: 0; }
 .ms-info strong { display: block; color: var(--orange); font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .ms-btn { padding: 12px 22px; font-size: .9rem; white-space: nowrap; flex-shrink: 0; animation: pulse 2s infinite; }
 
