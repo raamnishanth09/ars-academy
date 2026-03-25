@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* Mobile sticky — hide when price-card visible */
-  var sticky = document.getElementById('mobileSticky');
+  var sticky = document.getElementById('mobSticky');
   var priceCard = document.querySelector('.price-card');
   if (sticky && priceCard) {
     new IntersectionObserver(function (entries) {

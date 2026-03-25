@@ -234,14 +234,9 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 
 .hero-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 /* ── HERO BRAND ── */
-.hero-brand { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 28px; }
+.hero-brand { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 28px; }
 .hero-logo-img { width: 64px !important; height: 64px !important; max-width: 64px !important; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 18px rgba(255,122,0,0.5); flex-shrink: 0; display: block; }
-.hero-brand-name { font-size: 2rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); white-space: nowrap !important; }
-@media (max-width: 600px) {
-  .hero-brand-name { font-size: 1.2rem !important; letter-spacing: 1.5px !important; white-space: nowrap !important; }
-  .hero-logo-img { width: 44px !important; height: 44px !important; max-width: 44px !important; }
-  .hero-brand { gap: 10px !important; }
-}
+.hero-brand-name { font-size: 1.8rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); }
 .h-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 14px rgba(255,122,0,0.4); }
 .h-brand { font-size: 1.1rem; font-weight: 800; color: var(--orange); letter-spacing: 2.5px; }
 .hero-badge { display: inline-block; background: rgba(255,122,0,0.15); border: 1px solid rgba(255,122,0,0.4); color: var(--orange); font-size: .82rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; margin-bottom: 20px; }
@@ -416,7 +411,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 }
 @media (max-width: 768px) {
   .circle-wrapper { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
-  .circle-container { order: 0 !important; flex: 0 0 280px !important; width: 280px !important; height: 280px !important; }
+  .circle-container { order: 0 !important; flex: 0 0 90vw !important; width: 90vw !important; height: 90vw !important; max-width: 340px !important; max-height: 340px !important; }
   .who-side { order: 1 !important; display: block !important; flex: 1 1 140px !important; max-width: calc(50% - 8px) !important; width: auto !important; font-size: 13px !important; text-align: left !important; }
   .circle-center { width: 80px !important; height: 80px !important; font-size: 14px !important; }
   .circle-item { width: 68px !important; height: 68px !important; font-size: 17px !important; }
