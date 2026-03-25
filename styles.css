@@ -136,8 +136,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 
 /* ── MOBILE STICKY ── */
 .mob-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; padding: 12px 18px; background: var(--bg2); border-top: 2px solid var(--orange); align-items: center; justify-content: space-between; gap: 12px; transition: opacity .3s; }
-.ms-info { display: flex; align-items: center; gap: 10px; line-height: 1.2; font-size: .82rem; color: var(--grey); }
-.ms-logo { width: 38px !important; height: 38px !important; max-width: 38px !important; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--orange); flex-shrink: 0; display: block; }
+.ms-info { line-height: 1.2; font-size: .82rem; color: var(--grey); }
 .ms-info strong { display: block; color: var(--orange); font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .ms-btn { padding: 12px 22px; font-size: .9rem; white-space: nowrap; flex-shrink: 0; animation: pulse 2s infinite; }
 
@@ -237,9 +236,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 /* ── HERO BRAND ── */
 .hero-brand { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 28px; }
 .hero-logo-img { width: 64px !important; height: 64px !important; max-width: 64px !important; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 18px rgba(255,122,0,0.5); flex-shrink: 0; display: block; }
-.hero-brand-text { display: flex; flex-direction: column; }
-.hero-brand-name { font-size: 1.8rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); line-height: 1.1; }
-.hero-brand-tag { font-size: .78rem; color: #bbb; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+.hero-brand-name { font-size: 2rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); }
 .h-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 14px rgba(255,122,0,0.4); }
 .h-brand { font-size: 1.1rem; font-weight: 800; color: var(--orange); letter-spacing: 2.5px; }
 .hero-badge { display: inline-block; background: rgba(255,122,0,0.15); border: 1px solid rgba(255,122,0,0.4); color: var(--orange); font-size: .82rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; margin-bottom: 20px; }
