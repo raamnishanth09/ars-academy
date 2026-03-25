@@ -393,10 +393,28 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 .who-txt strong { display: block; color: var(--white); font-size: 1rem; margin-bottom: 4px; }
 .who-txt p { color: var(--grey); font-size: .9rem; margin: 0; }
 /* ── CIRCLE LAYOUT ── */
+.circle-wrapper {
+  display: flex; align-items: center; justify-content: center;
+  gap: 50px; margin-top: 40px;
+}
+.who-side {
+  width: 220px; color: #aaa; font-size: 15px; line-height: 1.6;
+}
+.who-side p {
+  margin-bottom: 15px; position: relative; padding-left: 22px;
+}
+.who-side p::before { content: "✔"; position: absolute; left: 0; color: var(--orange); }
+@media (max-width: 768px) {
+  .circle-wrapper { flex-direction: column; gap: 30px; }
+  .who-side { width: 100%; text-align: center; }
+  .who-side p { padding-left: 0; }
+  .who-side p::before { display: none; }
+}
 .circle-container {
   position: relative;
-  width: 480px; height: 480px;
-  margin: 0 auto 40px;
+  width: 380px; height: 380px;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 .circle-center {
   position: absolute;
