@@ -141,13 +141,28 @@ document.addEventListener('DOMContentLoaded', function () {
   var gainSlider = document.querySelector('.gain-slider');
   if (gainSlider) {
     var gainCards = gainSlider.querySelectorAll('.gain-card');
+    var gainDots  = document.querySelectorAll('.gain-dot');
     var gainIdx = 0;
+    function setGainDot(idx) {
+      gainDots.forEach(function(d) { d.classList.remove('active'); });
+      if (gainDots[idx]) gainDots[idx].classList.add('active');
+    }
     setInterval(function() {
       gainIdx = (gainIdx + 1) % gainCards.length;
       var cardLeft = gainCards[gainIdx].getBoundingClientRect().left;
       var sliderLeft = gainSlider.getBoundingClientRect().left;
       gainSlider.scrollLeft += cardLeft - sliderLeft;
+      setGainDot(gainIdx);
     }, 3000);
+    /* update dot on manual swipe */
+    gainSlider.addEventListener('scroll', function() {
+      var mid = gainSlider.scrollLeft + gainSlider.clientWidth / 2;
+      gainCards.forEach(function(c, i) {
+        if (c.offsetLeft <= mid && c.offsetLeft + c.offsetWidth > mid) {
+          gainIdx = i; setGainDot(i);
+        }
+      });
+    }, { passive: true });
   }
 
 });
