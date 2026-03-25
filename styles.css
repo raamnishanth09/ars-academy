@@ -236,7 +236,8 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 /* ── HERO BRAND ── */
 .hero-brand { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 28px; }
 .hero-logo-img { width: 64px !important; height: 64px !important; max-width: 64px !important; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 18px rgba(255,122,0,0.5); flex-shrink: 0; display: block; }
-.hero-brand-name { font-size: 2rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); }
+.hero-brand-name { font-size: 2rem; font-weight: 900; color: var(--orange); letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,122,0,0.6); white-space: nowrap; }
+@media (max-width: 480px) { .hero-brand-name { font-size: 1.4rem; letter-spacing: 2px; } .hero-logo-img { width: 50px !important; height: 50px !important; max-width: 50px !important; } }
 .h-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 14px rgba(255,122,0,0.4); }
 .h-brand { font-size: 1.1rem; font-weight: 800; color: var(--orange); letter-spacing: 2.5px; }
 .hero-badge { display: inline-block; background: rgba(255,122,0,0.15); border: 1px solid rgba(255,122,0,0.4); color: var(--orange); font-size: .82rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; margin-bottom: 20px; }
