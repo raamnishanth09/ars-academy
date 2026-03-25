@@ -412,7 +412,7 @@ p  { font-size: 1rem; color: #AAAAAA; line-height: 1.6; }
 @media (max-width: 768px) {
   .circle-wrapper { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
   .circle-container { order: 0 !important; flex: 0 0 90vw !important; width: 90vw !important; height: 90vw !important; max-width: 340px !important; max-height: 340px !important; }
-  .who-side { order: 1 !important; display: block !important; flex: 1 1 140px !important; max-width: calc(50% - 8px) !important; width: auto !important; font-size: 13px !important; text-align: left !important; }
+  .who-side { order: 1 !important; display: block !important; flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; font-size: 14px !important; text-align: left !important; padding: 0 8px !important; }
   .circle-center { width: 80px !important; height: 80px !important; font-size: 14px !important; }
   .circle-item { width: 68px !important; height: 68px !important; font-size: 17px !important; }
   .circle-item span { font-size: .56rem; }
