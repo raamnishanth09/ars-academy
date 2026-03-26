@@ -165,6 +165,11 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary .gain-card { background: #f0f4ff; border-color: rgba(26,35,126,0.15); }
 .sec-primary .gain-card h3 { color: var(--text-dark) !important; }
 .sec-primary .gain-card p  { color: #555 !important; }
+.sec-primary .gbox { background: var(--bg); border-color: rgba(212,175,55,0.35); }
+.sec-primary .gt h3 { color: var(--white) !important; }
+.sec-primary .gt p  { color: var(--grey) !important; }
+.sec-primary .gp    { color: var(--orange) !important; }
+.sec-primary .cur-card { background: linear-gradient(145deg,#1f2a8f,#151c6e); border-color: rgba(212,175,55,0.2); }
 
 .sec-head { text-align: center; margin-bottom: 48px; }
 .sec-tag {
