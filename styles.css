@@ -652,19 +652,19 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 /* ── PRICING ── */
 .price-card {
   max-width: 520px; margin: 0 auto;
-  background: var(--card);
-  border: 1px solid rgba(212,175,55,0.3);
+  background: linear-gradient(160deg, #0d1560, #1a237e);
+  border: 2px solid var(--orange);
   border-radius: var(--radius);
   padding: 44px 36px; text-align: center;
   position: relative;
-  box-shadow: 0 0 40px rgba(212,175,55,0.1);
-  transition: box-shadow .3s;
+  box-shadow: 0 0 60px rgba(212,175,55,0.25), 0 20px 60px rgba(0,0,0,0.4);
+  transition: box-shadow .3s, transform .3s;
 }
-.price-card:hover { box-shadow: 0 0 60px rgba(212,175,55,0.2); }
+.price-card:hover { transform: translateY(-4px); box-shadow: 0 0 90px rgba(212,175,55,0.4), 0 24px 70px rgba(0,0,0,0.5); }
 .price-badge { position: absolute; top: -1px; right: 24px; background: var(--orange); color: #111; font-size: .7rem; font-weight: 800; letter-spacing: 2px; padding: 5px 14px; border-radius: 0 0 8px 8px; }
 .price-amt { display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 8px; }
 .pc { font-size: 2rem; font-weight: 700; color: var(--orange); }
-.pa { font-size: 5.5rem; font-weight: 900; color: var(--white); line-height: 1; }
+.pa { font-size: 5.5rem; font-weight: 900; color: var(--orange); line-height: 1; }
 .po { font-size: 1.1rem; color: var(--grey); align-self: center; }
 .price-note { color: var(--orange); font-size: .85rem; margin-bottom: 24px; }
 .price-feats { text-align: left; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
