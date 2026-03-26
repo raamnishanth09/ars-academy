@@ -149,11 +149,11 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
 /* ── WHITE SECTION OVERRIDES ── */
 .sec-primary { padding: 80px 0; background: #f4f6ff; }
-.sec-primary h2, .sec-primary h3 { color: var(--text-dark) !important; }
+.sec-primary h2, .sec-primary h3 { color: #0d1560 !important; }
 .sec-primary p  { color: #444 !important; }
 .sec-primary li { color: #444 !important; }
 .sec-primary .sec-tag { color: var(--text-dark) !important; border-color: rgba(26,35,126,0.3) !important; }
-.sec-primary .orange { color: #c07000 !important; -webkit-text-fill-color: #c07000 !important; }
+.sec-primary .orange { color: var(--orange) !important; -webkit-text-fill-color: var(--orange) !important; }
 /* who section */
 .sec-primary .who-side { color: #444 !important; }
 .sec-primary .who-side p { color: #444 !important; }
@@ -573,9 +573,26 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   transition: opacity .3s;
 }
 .cur-card:hover::before { opacity: 1; }
-.cur-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 15px 35px rgba(212,175,55,0.3); }
+.cur-card:hover { transform: translateX(6px); box-shadow: 0 8px 28px rgba(212,175,55,0.25); border-color: rgba(212,175,55,0.45) !important; }
 .cn { font-size: 1.2rem; font-weight: 800; color: var(--orange); min-width: 36px; }
 .cur-card p { color: var(--white); font-size: .95rem; margin: 0; }
+
+/* ── CURRICULUM SLIDE-IN (overrides scroll-reveal fade-up) ── */
+.cur-list .cur-card.scroll-reveal {
+  transform: translateX(-44px);
+}
+.cur-list .cur-card.scroll-reveal.visible {
+  transform: translateX(0);
+}
+.cur-list .cur-card:nth-child(1) { transition-delay: 0.05s !important; }
+.cur-list .cur-card:nth-child(2) { transition-delay: 0.12s !important; }
+.cur-list .cur-card:nth-child(3) { transition-delay: 0.19s !important; }
+.cur-list .cur-card:nth-child(4) { transition-delay: 0.26s !important; }
+.cur-list .cur-card:nth-child(5) { transition-delay: 0.33s !important; }
+.cur-list .cur-card:nth-child(6) { transition-delay: 0.40s !important; }
+.cur-list .cur-card:nth-child(7) { transition-delay: 0.47s !important; }
+.cur-list .cur-card:nth-child(8) { transition-delay: 0.54s !important; }
+.cur-list .cur-card:nth-child(9) { transition-delay: 0.61s !important; }
 .cur-img { border-radius: var(--radius); opacity: .9; transition: transform .3s; }
 .cur-img:hover { transform: scale(1.03); }
 .cur-side { display: flex; flex-direction: column; }
