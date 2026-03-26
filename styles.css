@@ -74,30 +74,33 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   display: inline-block;
   background: linear-gradient(135deg, var(--orange), var(--orange2));
   color: #111;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
-  padding: 14px 30px;
+  padding: 14px 32px;
   border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.25s, box-shadow 0.25s, letter-spacing 0.25s;
   position: relative;
   overflow: hidden;
   text-align: center;
+  box-shadow: 0 4px 18px rgba(212,175,55,0.35);
+  letter-spacing: 0.3px;
 }
 .btn-orange::after {
   content: '';
   position: absolute;
   top: 0; left: -80%;
   width: 55%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
   transform: skewX(-20deg);
   transition: left 0.5s;
 }
 .btn-orange:hover::after { left: 170%; }
 .btn-orange:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(212,175,55,0.7), 0 8px 20px rgba(212,175,55,0.3);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.55), 0 2px 8px rgba(0,0,0,0.2);
 }
-.btn-lg { padding: 16px 36px; font-size: 1.05rem; border-radius: 8px; }
+.btn-orange:active { transform: translateY(0) scale(0.98); }
+.btn-lg { padding: 17px 40px; font-size: 1.08rem; border-radius: 10px; font-weight: 900; letter-spacing: 0.5px; }
 .btn-primary { display: inline-block; background: linear-gradient(135deg, #D4AF37, #F0C040); color: #111; font-weight: 700; padding: 14px 28px; border-radius: 8px; transition: transform .3s, box-shadow .3s; text-align: center; }
 .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(212,175,55,0.6); }
 
@@ -402,8 +405,8 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .gain-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 8px; }
 .gain-card p  { color: var(--grey); font-size: .88rem; margin: 0; }
 @media (max-width: 768px) {
-  .gain-slider { padding: 0 16px 20px; scroll-padding-left: 16px; }
-  .gain-card { flex: 0 0 calc(100% - 32px) !important; scroll-snap-align: start; }
+  .gain-slider { padding: 0 20px 20px; scroll-padding-left: 20px; gap: 16px; }
+  .gain-card { flex: 0 0 82% !important; scroll-snap-align: center; margin: 0; }
 }
 @media (min-width: 769px) {
   .gain-slider { overflow: visible; flex-wrap: wrap; justify-content: center; }
