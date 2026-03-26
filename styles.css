@@ -161,9 +161,9 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary .who-txt p { color: #555 !important; }
 /* gain cards — dark premium */
 .sec-primary .gain-card { background: linear-gradient(145deg,#1a237e,#151c6e) !important; border: 1px solid rgba(212,175,55,0.35) !important; border-top: 3px solid var(--orange) !important; color: var(--white) !important; box-shadow: 0 8px 28px rgba(26,35,126,0.3); }
-.sec-primary .gain-card h3 { color: var(--white) !important; }
-.sec-primary .gain-card p  { color: rgba(255,255,255,0.8) !important; }
-.sec-primary .gain-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,35,126,0.4) !important; border-top-color: var(--orange) !important; }
+.sec-primary .gain-card h3 { color: var(--orange) !important; font-weight: 700; }
+.sec-primary .gain-card p  { color: rgba(255,255,255,0.75) !important; }
+.sec-primary .gain-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,35,126,0.4) !important; }
 /* curriculum */
 .sec-primary .cur-list li { color: #333 !important; }
 .sec-primary .cur-list li::before { color: var(--orange) !important; }
@@ -172,9 +172,10 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary .cn { color: var(--orange) !important; }
 /* guarantee box */
 .sec-primary .gbox { background: linear-gradient(135deg,#1a237e,#0d1560) !important; border: 1px solid rgba(212,175,55,0.4) !important; box-shadow: 0 12px 40px rgba(26,35,126,0.35) !important; }
-.sec-primary .gt h3 { color: var(--white) !important; }
-.sec-primary .gt p  { color: rgba(255,255,255,0.8) !important; }
-.sec-primary .gp    { color: var(--orange) !important; }
+.sec-primary .gt h3 { color: var(--orange) !important; font-weight: 800; }
+.sec-primary .gt p  { color: rgba(255,255,255,0.82) !important; }
+.sec-primary .gt p strong { color: var(--orange) !important; font-weight: 700; }
+.sec-primary .gp    { color: var(--orange) !important; font-style: italic; }
 /* guru cards on white section */
 .sec-primary .guru-card { background: #ffffff !important; border: 1px solid rgba(26,35,126,0.15) !important; box-shadow: 0 4px 20px rgba(26,35,126,0.1); }
 .sec-primary .guru-info strong { color: var(--text-dark) !important; }
@@ -673,8 +674,9 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 /* ── GUARANTEE ── */
 .gbox { display: flex; align-items: flex-start; gap: 22px; flex-wrap: wrap; background: var(--card); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius); padding: 30px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
 .gi { font-size: 3.5rem; flex-shrink: 0; }
-.gt h3 { color: var(--white); margin-bottom: 8px; font-size: 1.2rem; }
+.gt h3 { color: var(--orange); margin-bottom: 8px; font-size: 1.2rem; font-weight: 800; }
 .gt p { color: var(--grey); font-size: .95rem; }
+.gt p strong { color: var(--orange); }
 .gp { margin-top: 8px; color: var(--white) !important; }
 
 /* ── FAQ ── */
