@@ -162,6 +162,9 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary .guru-info strong { color: var(--text-dark); }
 .sec-primary .guru-info span { color: #666; }
 .sec-primary .orange { color: #b8860b; -webkit-text-fill-color: #b8860b; }
+.sec-primary .gain-card { background: #f0f4ff; border-color: rgba(26,35,126,0.15); }
+.sec-primary .gain-card h3 { color: var(--text-dark); }
+.sec-primary .gain-card p  { color: #555; }
 
 .sec-head { text-align: center; margin-bottom: 48px; }
 .sec-tag {
