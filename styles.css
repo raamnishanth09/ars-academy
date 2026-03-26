@@ -696,7 +696,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .price-badge { position: absolute; top: -1px; right: 24px; background: var(--orange); color: #111; font-size: .7rem; font-weight: 800; letter-spacing: 2px; padding: 5px 14px; border-radius: 0 0 8px 8px; }
 .price-amt { display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 8px; }
 .pc { font-size: 2rem; font-weight: 700; color: var(--orange); }
-.pa { font-size: 5.5rem; font-weight: 900; color: var(--orange); line-height: 1; }
+.pa { font-size: 6.5rem; font-weight: 900; color: var(--orange); line-height: 1; text-shadow: 0 0 30px rgba(229,160,0,0.5), 0 4px 20px rgba(229,160,0,0.3); letter-spacing: -2px; }
 .po { font-size: 1.1rem; color: var(--grey); align-self: center; }
 .price-note { color: var(--orange); font-size: .85rem; margin-bottom: 24px; }
 .price-feats { text-align: left; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
