@@ -142,39 +142,41 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .ms-btn { padding: 10px 14px; font-size: .78rem; white-space: nowrap; flex: 1 1 auto; min-width: 0; text-align: center; animation: pulse 2s infinite; }
 
 /* ── SECTION BACKGROUNDS ── */
-.sec-primary { padding: 90px 0; background: #ffffff; }
-.sec-dark     { padding: 90px 0; background: var(--bg2); }
+.sec-dark     { padding: 80px 0; background: var(--bg2); }
 
-/* ── WHITE SECTION TEXT OVERRIDES ── */
+/* ── WHITE SECTION OVERRIDES ── */
+.sec-primary { padding: 80px 0; background: #f4f6ff; }
 .sec-primary h2, .sec-primary h3 { color: var(--text-dark) !important; }
-.sec-primary p  { color: var(--text-mid) !important; }
-.sec-primary li { color: var(--text-mid) !important; }
+.sec-primary p  { color: #444 !important; }
+.sec-primary li { color: #444 !important; }
 .sec-primary .sec-tag { color: var(--text-dark) !important; border-color: rgba(26,35,126,0.3) !important; }
 .sec-primary .orange { color: #b8860b !important; -webkit-text-fill-color: #b8860b !important; }
 /* who section */
-.sec-primary .who-side { color: #555 !important; }
-.sec-primary .who-side p { color: #555 !important; }
+.sec-primary .who-side { color: #444 !important; }
+.sec-primary .who-side p { color: #444 !important; }
 .sec-primary .who-side p::before { color: var(--orange) !important; }
-.sec-primary .anim-card, .sec-primary .who-item { background: #f0f4ff !important; border-color: rgba(26,35,126,0.15) !important; }
-.sec-primary .who-item:hover { box-shadow: 0 10px 30px rgba(26,35,126,0.15) !important; }
+.sec-primary .anim-card, .sec-primary .who-item { background: #ffffff !important; border-color: rgba(26,35,126,0.12) !important; box-shadow: 0 4px 20px rgba(26,35,126,0.08); }
+.sec-primary .who-item:hover { box-shadow: 0 10px 30px rgba(26,35,126,0.18) !important; }
 .sec-primary .who-txt strong { color: var(--text-dark) !important; }
-.sec-primary .who-txt p { color: #666 !important; }
-/* gain cards */
-.sec-primary .gain-card { background: #f0f4ff !important; border-color: rgba(26,35,126,0.15) !important; color: var(--text-dark) !important; }
-.sec-primary .gain-card h3 { color: var(--text-dark) !important; }
-.sec-primary .gain-card p  { color: #555 !important; }
+.sec-primary .who-txt p { color: #555 !important; }
+/* gain cards — dark premium */
+.sec-primary .gain-card { background: linear-gradient(145deg,#1a237e,#151c6e) !important; border: 1px solid rgba(212,175,55,0.35) !important; border-top: 3px solid var(--orange) !important; color: var(--white) !important; box-shadow: 0 8px 28px rgba(26,35,126,0.3); }
+.sec-primary .gain-card h3 { color: var(--white) !important; }
+.sec-primary .gain-card p  { color: rgba(255,255,255,0.8) !important; }
+.sec-primary .gain-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,35,126,0.4) !important; border-top-color: var(--orange) !important; }
 /* curriculum */
-.sec-primary .cur-list li { color: #444 !important; }
+.sec-primary .cur-list li { color: #333 !important; }
 .sec-primary .cur-list li::before { color: var(--orange) !important; }
-.sec-primary .cur-card { background: linear-gradient(145deg,#1f2a8f,#151c6e) !important; border-color: rgba(212,175,55,0.2) !important; }
-.sec-primary .cur-card p { color: var(--white) !important; }
+.sec-primary .cur-card { background: linear-gradient(145deg,#1a237e,#151c6e) !important; border: 1px solid rgba(212,175,55,0.25) !important; box-shadow: 0 4px 16px rgba(26,35,126,0.25); }
+.sec-primary .cur-card p { color: rgba(255,255,255,0.9) !important; }
 .sec-primary .cn { color: var(--orange) !important; }
 /* guarantee box */
-.sec-primary .gbox { background: var(--bg) !important; border-color: rgba(212,175,55,0.35) !important; }
+.sec-primary .gbox { background: linear-gradient(135deg,#1a237e,#0d1560) !important; border: 1px solid rgba(212,175,55,0.4) !important; box-shadow: 0 12px 40px rgba(26,35,126,0.35) !important; }
 .sec-primary .gt h3 { color: var(--white) !important; }
-.sec-primary .gt p  { color: var(--grey) !important; }
+.sec-primary .gt p  { color: rgba(255,255,255,0.8) !important; }
 .sec-primary .gp    { color: var(--orange) !important; }
-/* guru cards */
+/* guru cards on white section */
+.sec-primary .guru-card { background: #ffffff !important; border: 1px solid rgba(26,35,126,0.15) !important; box-shadow: 0 4px 20px rgba(26,35,126,0.1); }
 .sec-primary .guru-info strong { color: var(--text-dark) !important; }
 .sec-primary .guru-info span   { color: #666 !important; }
 
