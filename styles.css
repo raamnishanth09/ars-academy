@@ -150,7 +150,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary p  { color: #444 !important; }
 .sec-primary li { color: #444 !important; }
 .sec-primary .sec-tag { color: var(--text-dark) !important; border-color: rgba(26,35,126,0.3) !important; }
-.sec-primary .orange { color: #b8860b !important; -webkit-text-fill-color: #b8860b !important; }
+.sec-primary .orange { color: #c07000 !important; -webkit-text-fill-color: #c07000 !important; }
 /* who section */
 .sec-primary .who-side { color: #444 !important; }
 .sec-primary .who-side p { color: #444 !important; }
