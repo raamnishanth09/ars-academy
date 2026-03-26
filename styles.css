@@ -250,7 +250,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 16px;
 }
 
 /* Floating shapes */
@@ -289,7 +289,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   letter-spacing: 1px;
   
 }
-.hero-sub { font-size: 1rem; color: #111; margin-bottom: 24px; line-height: 1.6; text-align: center; padding: 12px 20px; background: #D4AF37; border-radius: 8px; font-weight: 600; }
+.hero-sub { font-size: 1rem; color: #111; margin: 0; line-height: 1.6; text-align: center; padding: 12px 20px; background: #D4AF37; border-radius: 8px; font-weight: 600; }
 .hero-sub strong { color: var(--orange); }
 .price { color: #111; font-weight: 800; }
 .hero-list { margin-bottom: 30px; }
