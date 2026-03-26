@@ -7,10 +7,12 @@
   --bg:       #1a237e;
   --bg2:      #151c6e;
   --card:     rgba(255,255,255,0.07);
-  --orange:   #FFD700;
-  --orange2:  #FFC107;
+  --orange:   #e5a000;
+  --orange2:  #c88a00;
   --white:    #F5F5F5;
   --grey:     rgba(255,255,255,0.72);
+  --text-dark: #1a237e;
+  --text-mid:  #444444;
   --radius:   12px;
   --rsm:      8px;
 }
@@ -140,8 +142,23 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .ms-btn { padding: 10px 14px; font-size: .78rem; white-space: nowrap; flex: 1 1 auto; min-width: 0; text-align: center; animation: pulse 2s infinite; }
 
 /* ── SECTION BACKGROUNDS ── */
-.sec-primary { padding: 90px 0; background: var(--bg); }
+.sec-primary { padding: 90px 0; background: #ffffff; }
 .sec-dark     { padding: 90px 0; background: var(--bg2); }
+
+/* ── WHITE SECTION TEXT OVERRIDES ── */
+.sec-primary h2, .sec-primary h3 { color: var(--text-dark); }
+.sec-primary p { color: var(--text-mid); }
+.sec-primary li { color: var(--text-mid); }
+.sec-primary .sec-tag { color: var(--text-dark); border-color: rgba(26,35,126,0.3); }
+.sec-primary .who-side { color: #555; }
+.sec-primary .who-side p { color: #555; }
+.sec-primary .who-side p::before { color: var(--orange); }
+.sec-primary .anim-card, .sec-primary .who-item { background: #f0f4ff; border-color: rgba(26,35,126,0.15); }
+.sec-primary .who-item:hover { box-shadow: 0 10px 30px rgba(26,35,126,0.15); }
+.sec-primary .who-txt strong { color: var(--text-dark); }
+.sec-primary .who-txt p { color: #666; }
+.sec-primary .cur-list li { color: #444; }
+.sec-primary .cur-list li::before { color: var(--orange); }
 
 .sec-head { text-align: center; margin-bottom: 48px; }
 .sec-tag {
@@ -239,7 +256,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .h-logo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); box-shadow: 0 0 14px rgba(212,175,55,0.4); }
 .h-brand { font-size: 1.1rem; font-weight: 800; color: var(--orange); letter-spacing: 2.5px; }
 .hero-badge { display: inline-block; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); color: var(--orange); font-size: .82rem; font-weight: 600; padding: 6px 18px; border-radius: 50px; margin-bottom: 20px; }
-.hero-hook { font-size: 18px; color: #ffffff; text-align: center; margin-bottom: 18px; text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
+.hero-hook { font-size: 18px; color: #ffffff; text-align: center; margin-bottom: 18px;  }
 .hero-hook strong { color: var(--white); }
 .hero h1 {
   margin-top: 0;
@@ -252,7 +269,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   -webkit-text-fill-color: #ffffff;
   background: none;
   letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  
 }
 .hero-sub { font-size: 1rem; color: #111; margin-bottom: 24px; line-height: 1.6; text-align: center; padding: 12px 20px; background: #D4AF37; border-radius: 8px; font-weight: 600; }
 .hero-sub strong { color: var(--orange); }
@@ -446,7 +463,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   stroke: rgba(212,175,55,0.35);
   stroke-width: 1.2;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 4px rgba(212,175,55,0.4));
+  
 }
 /* Circle nodes */
 .circle-item {
@@ -497,8 +514,8 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   text-align: center;
 }
 .who-hl-tag { color: var(--orange); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
-.who-hl-line { color: #ddd; font-size: .95rem; margin: 10px 0; line-height: 1.6; }
-.who-hl-line strong { color: var(--white); }
+.who-hl-line { color: #444; font-size: .95rem; margin: 10px 0; line-height: 1.6; }
+.who-hl-line strong { color: var(--text-dark); }
 @media (max-width: 540px) { .who-item { flex-direction: column; align-items: flex-start; } }
 
 /* ── CURRICULUM ── */
