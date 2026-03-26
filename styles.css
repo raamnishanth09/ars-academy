@@ -159,6 +159,9 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .sec-primary .who-txt p { color: #666; }
 .sec-primary .cur-list li { color: #444; }
 .sec-primary .cur-list li::before { color: var(--orange); }
+.sec-primary .guru-info strong { color: var(--text-dark); }
+.sec-primary .guru-info span { color: #666; }
+.sec-primary .orange { color: #b8860b; -webkit-text-fill-color: #b8860b; }
 
 .sec-head { text-align: center; margin-bottom: 48px; }
 .sec-tag {
