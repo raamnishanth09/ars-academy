@@ -45,7 +45,7 @@
       text-align: center;
       background: linear-gradient(160deg, #0d1560 0%, #1a237e 50%, #151c6e 100%);
       position: relative; overflow: hidden;
-      padding: 120px 24px 80px;
+      padding: 72px 24px 60px;
     }
     /* floating numerology numbers */
     .ty-floats { position:absolute; inset:0; pointer-events:none; z-index:0; }
@@ -211,7 +211,7 @@
       .ty-steps { grid-template-columns:1fr; }
       .ty-stats  { grid-template-columns:1fr; }
       .ty-stat:not(:last-child)::after { right:20%; top:auto; bottom:0; height:1px; width:60%; left:20%; }
-      .ty-hero { padding:100px 20px 70px; }
+      .ty-hero { padding:70px 20px 50px; }
     }
   </style>
 </head>
@@ -254,37 +254,9 @@
 </section>
 
 <!-- ════════════════════════════
-     WELCOME VIDEO
-════════════════════════════ -->
-<section class="sec-dark">
-  <div class="wrap ty-video-grid">
-    <div class="ty-video-text" data-aos="fade-right">
-      <p class="sec-tag">FOUNDER MESSAGE</p>
-      <h2>🎬 Founder's <span class="orange">Welcome Message</span></h2>
-      <p style="margin-top:14px;">A.S. Rakuraj sir உங்களுக்கு personally ஒரு special message சொல்றாங்க — கட்டாயம் பாருங்க!</p>
-    </div>
-    <div class="ty-video-wrap" onclick="openTyModal()" data-aos="fade-left" data-aos-delay="150">
-      <img src="https://img.youtube.com/vi/2V11ouv33rk/hqdefault.jpg"
-           alt="Welcome Message from A.S. Rakuraj"
-           onerror="this.src='https://img.youtube.com/vi/2V11ouv33rk/mqdefault.jpg'">
-      <div class="ty-vid-label">▶ VIDEO</div>
-      <div class="ty-play-btn">▶</div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO MODAL -->
-<div class="vmodal" id="tyVideoModal">
-  <div class="vmodal-box">
-    <button class="vmodal-close" onclick="closeTyModal()">&times;</button>
-    <div class="vmodal-frame" id="tyVideoFrame"></div>
-  </div>
-</div>
-
-<!-- ════════════════════════════
      COMMUNITY
 ════════════════════════════ -->
-<section class="sec-dark" id="next-steps" style="padding-top:0;">
+<section class="sec-dark" id="next-steps">
   <div class="wrap">
     <div class="sec-head anim-up">
       <p class="sec-tag">JOIN US</p>
@@ -313,6 +285,34 @@
     </div>
   </div>
 </section>
+
+<!-- ════════════════════════════
+     WELCOME VIDEO
+════════════════════════════ -->
+<section class="sec-dark" style="padding-top:0;">
+  <div class="wrap ty-video-grid">
+    <div class="ty-video-text" data-aos="fade-right">
+      <p class="sec-tag">FOUNDER MESSAGE</p>
+      <h2>🎬 Founder's <span class="orange">Welcome Message</span></h2>
+      <p style="margin-top:14px;">A.S. Rakuraj sir உங்களுக்கு personally ஒரு special message சொல்றாங்க — கட்டாயம் பாருங்க!</p>
+    </div>
+    <div class="ty-video-wrap" onclick="openTyModal()" data-aos="fade-left" data-aos-delay="150">
+      <img src="https://img.youtube.com/vi/2V11ouv33rk/hqdefault.jpg"
+           alt="Welcome Message from A.S. Rakuraj"
+           onerror="this.src='https://img.youtube.com/vi/2V11ouv33rk/mqdefault.jpg'">
+      <div class="ty-vid-label">▶ VIDEO</div>
+      <div class="ty-play-btn">▶</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="vmodal" id="tyVideoModal">
+  <div class="vmodal-box">
+    <button class="vmodal-close" onclick="closeTyModal()">&times;</button>
+    <div class="vmodal-frame" id="tyVideoFrame"></div>
+  </div>
+</div>
 
 <!-- ════════════════════════════
      FOUNDER QUOTE
