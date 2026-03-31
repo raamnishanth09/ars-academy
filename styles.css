@@ -397,6 +397,7 @@ p  { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
   -webkit-overflow-scrolling: touch;
 }
 .gain-slider::-webkit-scrollbar { display: none; }
+.gain-slider { scrollbar-width: none; -ms-overflow-style: none; }
 .gain-card {
   flex: 0 0 calc(25% - 15px);
   scroll-snap-align: center;
